@@ -1,4 +1,7 @@
 import AboutAndFeatures from "@/components/AboutAndFeatures";
+import Blog from "@/components/Blog";
+import FAQ from "@/components/FAQ";
+import Footer from "@/components/Footer";
 import GetAQuote from "@/components/GetAQuote";
 import Hero from "@/components/Hero";
 import Process from "@/components/Process";
@@ -15,6 +18,9 @@ export default function Home() {
       <Services />
       <Testimonials />
       <GetAQuote />
+      <FAQ />
+      <Blog />
+      <Footer />
     </main>
   );
 }

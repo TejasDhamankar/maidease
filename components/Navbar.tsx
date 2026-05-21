@@ -20,11 +20,10 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "Services", href: "#" },
-    { name: "About Us", href: "#" },
-    { name: "FAQs", href: "#" },
-    { name: "Contact", href: "#" },
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "About Us", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -32,7 +31,7 @@ export default function Navbar() {
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
             ? "bg-white/90 backdrop-blur-md shadow-sm py-3" 
@@ -70,8 +69,8 @@ export default function Navbar() {
               <Phone className="w-4 h-4 text-green-600" />
               <span>(+91) 9867074050</span>
             </div>
-            <Button className="bg-[#fbbf24] hover:bg-[#f59e0b] text-black font-semibold rounded-xl px-6">
-              Get a Quote
+            <Button asChild className="bg-[#fbbf24] hover:bg-[#f59e0b] text-black font-semibold rounded-xl px-6">
+              <Link href="/#get-a-quote">Get a Quote</Link>
             </Button>
           </div>
 
@@ -92,7 +91,8 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="fixed top-[60px] left-0 right-0 bg-white border-b border-gray-100 shadow-lg z-40 md:hidden overflow-hidden"
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed top-15 left-0 right-0 bg-white border-b border-gray-100 shadow-lg z-40 md:hidden overflow-hidden"
           >
             <div className="flex flex-col px-4 py-6 gap-4">
               {navLinks.map((link) => (
@@ -110,8 +110,8 @@ export default function Navbar() {
                   <Phone className="w-4 h-4 text-green-600" />
                   <span>(+91) 9867074050</span>
                 </div>
-                <Button className="w-full bg-[#fbbf24] hover:bg-[#f59e0b] text-black font-semibold rounded-xl">
-                  Get a Quote
+                <Button asChild className="w-full bg-[#fbbf24] hover:bg-[#f59e0b] text-black font-semibold rounded-xl">
+                  <Link href="/#get-a-quote">Get a Quote</Link>
                 </Button>
               </div>
             </div>

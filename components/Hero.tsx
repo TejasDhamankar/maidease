@@ -46,7 +46,7 @@ export default function Hero() {
         <div className="relative z-30 w-full md:w-[70%] lg:w-[52%] bg-[#f8f9f6]/95 backdrop-blur-sm p-8 sm:p-10 lg:p-12 rounded-[2rem] shadow-2xl border border-white/50">
           
           <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-medium tracking-tight text-[#111827] mb-6 leading-[1.15]">
-            Sparkly Residential <br className="hidden xl:block"/> and Commercial <br className="hidden xl:block"/> Cleaning Services
+            MaidEase Residential <br className="hidden xl:block"/> and Commercial <br className="hidden xl:block"/> Cleaning Services
           </h1>
           
           <p className="text-lg text-gray-500 mb-8 max-w-[90%] leading-relaxed">
