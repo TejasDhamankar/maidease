@@ -73,7 +73,7 @@ export default function Process() {
         >
           <div className="flex items-center gap-1 mb-3">
             <span className="text-xs font-bold tracking-widest text-gray-800 uppercase">HOW IT WORKS</span>
-            <span className="text-[#7ed321] text-lg font-light leading-none -mt-1">//</span>
+            <span className="text-[#7ed321] text-lg font-light leading-none -mt-1">{"//"}</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-medium text-[#111827]">Quick and Easy</h2>
         </motion.div>

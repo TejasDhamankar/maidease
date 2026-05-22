@@ -69,7 +69,7 @@ export default function Testimonials() {
           >
             <div className="flex items-center gap-2 mb-3">
               <span className="text-xs font-bold tracking-widest text-gray-800 uppercase">TESTIMONIALS</span>
-              <span className="text-[#7ed321] text-lg font-light leading-none -mt-1">//</span>
+              <span className="text-[#3aa724] text-lg font-light leading-none -mt-1">{"//"}</span>
             </div>
             <h2 className="text-4xl md:text-[2.75rem] font-medium text-[#111827] leading-tight">
               Empowering Thousands of <br className="hidden md:block" /> Users and Enterprises

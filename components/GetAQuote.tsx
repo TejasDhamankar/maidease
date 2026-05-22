@@ -6,8 +6,14 @@ import { motion } from "framer-motion";
 import { CheckCircle2, ChevronDown, Check } from "lucide-react";
 
 export default function GetAQuote() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [selectedService, setSelectedService] = useState("");
   const [urgency, setUrgency] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
 
   const services = [
     "Maid", "Cook", "Baby Sitter", "Baby Massage", 
@@ -17,6 +23,41 @@ export default function GetAQuote() {
   ];
 
   const urgencyOptions = ["Urgent Need", "Needed Later", "I'm Just Planning"];
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name || !email || !phone || !selectedService || !urgency) {
+      setError("Please fill in all required fields.");
+      return;
+    }
+
+    setError("");
+    setLoading(true);
+    try {
+      const response = await fetch("/api/quote", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          service: selectedService,
+          urgency,
+        }),
+      });
+      if (!response.ok) {
+        throw new Error("Failed to submit request");
+      }
+
+      setSuccess(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "An error occurred");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section id="get-a-quote" className="py-20 bg-white relative">
@@ -34,48 +75,118 @@ export default function GetAQuote() {
           >
             <div className="flex items-center gap-2 mb-2">
               <span className="text-[10px] font-bold tracking-widest text-gray-800 uppercase">GET YOUR FREE ESTIMATE</span>
-              <span className="text-[#3aa724] text-lg font-light leading-none -mt-1">//</span>
+              <span className="text-[#3aa724] text-lg font-light leading-none -mt-1">{"//"}</span>
             </div>
             
             <h2 className="text-4xl md:text-[2.75rem] font-medium text-[#111827] mb-10 leading-tight">
               Get a Quote
             </h2>
 
-            <form className="flex flex-col gap-6 flex-grow">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <input type="text" placeholder="Your name" className="w-full px-5 py-3.5 rounded-xl border-none outline-none focus:ring-2 focus:ring-[#3aa724]/50 shadow-sm text-sm placeholder:text-gray-600 bg-white/70" />
-                <input type="email" placeholder="Email" className="w-full px-5 py-3.5 rounded-xl border-none outline-none focus:ring-2 focus:ring-[#3aa724]/50 shadow-sm text-sm placeholder:text-gray-600 bg-white/70" />
-                <input type="tel" placeholder="Phone" className="w-full px-5 py-3.5 rounded-xl border-none outline-none focus:ring-2 focus:ring-[#3aa724]/50 shadow-sm text-sm placeholder:text-gray-600 bg-white/70" />
-                <input type="text" placeholder="Total square footage" className="w-full px-5 py-3.5 rounded-xl border-none outline-none focus:ring-2 focus:ring-[#3aa724]/50 shadow-sm text-sm placeholder:text-gray-600 bg-white/70" />
-              </div>
-
-              {/* Service Selection */}
-              <div className="relative">
-                <select 
-                  value={selectedService}
-                  onChange={(e) => setSelectedService(e.target.value)}
-                  className="w-full px-5 py-3.5 rounded-xl border-none outline-none focus:ring-2 focus:ring-[#3aa724]/50 shadow-sm text-sm text-gray-600 appearance-none bg-white/70 cursor-pointer"
+            {success ? (
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 text-center space-y-4 shadow-xl border border-[#3aa724]/20"
+              >
+                <div className="w-16 h-16 bg-[#3aa724]/10 rounded-full flex items-center justify-center mx-auto">
+                  <Check className="w-8 h-8 text-[#3aa724]" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#111827]">Request Sent!</h3>
+                <p className="text-gray-600">Thank you for your interest. We will contact you shortly with your free estimate.</p>
+                <button 
+                  onClick={() => {
+                    setSuccess(false);
+                    setName("");
+                    setEmail("");
+                    setPhone("");
+                    setSelectedService("");
+                    setUrgency("");
+                    }}
+                  className="text-[#3aa724] hover:underline font-bold"
                 >
-                  <option value="" disabled>What do you want your maid to do?</option>
-                  {services.map(s => <option key={s} value={s}>{s}</option>)}
-                </select>
-                <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
-              </div>
+                  Submit another request
+                </button>
+              </motion.div>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col gap-6 flex-grow">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <input 
+                    type="text" 
+                    placeholder="Full Name" 
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                    className="w-full px-5 py-3.5 rounded-xl border-none outline-none focus:ring-2 focus:ring-[#3aa724]/50 shadow-sm text-sm placeholder:text-gray-600 bg-white/70" 
+                  />
+                  <input 
+                    type="email" 
+                    placeholder="Email Address" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="w-full px-5 py-3.5 rounded-xl border-none outline-none focus:ring-2 focus:ring-[#3aa724]/50 shadow-sm text-sm placeholder:text-gray-600 bg-white/70" 
+                  />
+                  <input 
+                    type="tel" 
+                    placeholder="Phone" 
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    required
+                    className="w-full px-5 py-3.5 rounded-xl border-none outline-none focus:ring-2 focus:ring-[#3aa724]/50 shadow-sm text-sm placeholder:text-gray-600 bg-white/70" 
+                  />
+                </div>
 
-              {/* Urgency Selection */}
-              <div className="grid gap-3">
-                {urgencyOptions.map(option => (
-                  <label key={option} className={`flex items-center p-4 rounded-xl border ${urgency === option ? 'border-[#3aa724] bg-white' : 'border-transparent bg-white/50'} cursor-pointer transition-all`}>
-                    <input type="radio" name="urgency" value={option} onChange={() => setUrgency(option)} className="w-5 h-5 text-[#3aa724] focus:ring-[#3aa724]" />
-                    <span className="ml-3 font-medium text-gray-700">{option}</span>
-                  </label>
-                ))}
-              </div>
+                {/* Service Selection */}
+                <div className="relative">
+                  <select 
+                    value={selectedService}
+                    onChange={(e) => setSelectedService(e.target.value)}
+                    required
+                    className="w-full px-5 py-3.5 rounded-xl border-none outline-none focus:ring-2 focus:ring-[#3aa724]/50 shadow-sm text-sm text-gray-600 appearance-none bg-white/70 cursor-pointer"
+                  >
+                    <option value="" disabled>What do you want your maid to do?</option>
+                    {services.map(s => <option key={s} value={s}>{s}</option>)}
+                  </select>
+                  <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+                </div>
 
-              <button type="button" className="mt-4 bg-[#111827] hover:bg-black text-white font-semibold py-4 px-8 rounded-full w-full transition-transform hover:scale-[1.02] shadow-md">
-                I&apos;d Like a Quote
-              </button>
-            </form>
+                {/* Urgency Selection */}
+                <div className="grid gap-3">
+                  {urgencyOptions.map(option => (
+                    <label key={option} className={`flex items-center p-4 rounded-xl border ${urgency === option ? 'border-[#3aa724] bg-white' : 'border-transparent bg-white/50'} cursor-pointer transition-all`}>
+                      <input 
+                        type="radio" 
+                        name="urgency" 
+                        value={option} 
+                        checked={urgency === option}
+                        onChange={() => setUrgency(option)} 
+                        className="w-5 h-5 text-[#3aa724] focus:ring-[#3aa724]" 
+                      />
+                      <span className="ml-3 font-medium text-gray-700">{option}</span>
+                    </label>
+                  ))}
+                </div>
+
+                {error && (
+                  <div className="text-red-600 text-xs font-bold bg-red-50 p-3 rounded-xl border border-red-100">
+                    {error}
+                  </div>
+                )}
+
+                <button 
+                  type="submit" 
+                  disabled={loading}
+                  className="mt-4 bg-[#111827] hover:bg-black text-white font-semibold py-4 px-8 rounded-full w-full transition-transform hover:scale-[1.02] shadow-md flex items-center justify-center gap-2"
+                >
+                  {loading ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      Sending...
+                    </>
+                  ) : "I'd Like a Quote"}
+                </button>
+              </form>
+            )}
           </motion.div>
 
           {/* --- RIGHT PANEL: IMAGE & GUARANTEE CARD --- */}
