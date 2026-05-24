@@ -18,11 +18,11 @@ export default async function AdminDashboard() {
   
   // Serialize Mongo objects
   const serializedQuotes = quotes.map((quote: any) => ({
-    ...quote,
-    _id: quote._id.toString(),
-    createdAt: quote.createdAt.toISOString(),
-    updatedAt: quote.updatedAt.toISOString(),
-  }));
+  ...quote,
+  _id: quote._id.toString(),
+  createdAt: quote.createdAt?.toISOString() ?? null,
+  updatedAt: quote.updatedAt?.toISOString() ?? null,
+}));
 
   return (
     <SidebarProvider

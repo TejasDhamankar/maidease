@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { CheckCircle2, Zap, Heart, Users, Award, Globe } from "lucide-react";
+import { CheckCircle2, Zap, Heart, Users, Award } from "lucide-react";
 
 export default function AboutPage() {
   const coreValues = [
@@ -15,7 +15,7 @@ export default function AboutPage() {
     {
       icon: Zap,
       title: "Eco-Innovation",
-      description: "We use the latest eco-friendly cleaning methods and sustainable practices for your home.",
+      description: "We use modern hospitality processes and reliable service practices for your home.",
     },
     {
       icon: Users,
@@ -33,7 +33,7 @@ export default function AboutPage() {
     {
       year: "2010",
       title: "Founded",
-      description: "MaidEase was founded with a simple mission: to make professional cleaning accessible to everyone.",
+      description: "BB HOSPITALITY was founded with a simple mission: to make professional home and hospitality staffing accessible to everyone.",
     },
     {
       year: "2015",
@@ -48,7 +48,7 @@ export default function AboutPage() {
     {
       year: "2024",
       title: "Industry Leader",
-      description: "Recognized as the #1 trusted cleaning service provider in North America.",
+      description: "Recognized as a trusted hospitality and home-service staffing provider.",
     },
   ];
 
@@ -83,7 +83,7 @@ export default function AboutPage() {
     <main className="min-h-screen w-full bg-white">
       
       {/* ===== HERO SECTION ===== */}
-      <section className="relative w-full bg-gradient-to-br from-[#e4f4d2] to-[#d4e8b8] pt-20 pb-20 px-4">
+      <section className="relative w-full bg-gradient-to-br from-blue-50 to-sky-100 pt-20 pb-20 px-4">
         <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -92,10 +92,10 @@ export default function AboutPage() {
             className="text-center"
           >
             <h1 className="text-5xl md:text-6xl font-medium text-[#111827] mb-6 leading-[1.15] tracking-tight">
-              About <span className="text-[#3aa724]">MaidEase</span>
+              About <span className="text-blue-600">BB HOSPITALITY</span>
             </h1>
             <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-8 leading-relaxed">
-              Transforming homes into pristine sanctuaries with professional cleaning services you can trust.
+              Connecting homes and businesses with verified maids, cooks, caregivers, housekeeping teams, and hospitality staff.
             </p>
             <div className="h-1 w-24 bg-[#fbbf24] rounded-full mx-auto"></div>
           </motion.div>
@@ -129,7 +129,7 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
             >
               <div className="mb-6">
-                  <span className="inline-block px-4 py-2 bg-[#e4f4d2] text-[#3aa724] rounded-full text-sm font-semibold">
+                  <span className="inline-block px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-semibold">
                     OUR STORY
                   </span>
                 </div>
@@ -144,15 +144,15 @@ export default function AboutPage() {
               </p>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#3aa724]" />
+                  <CheckCircle2 className="w-5 h-5 text-blue-600" />
                     <span className="text-gray-700">Trusted by 50,000+ families</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#3aa724]" />
+                  <CheckCircle2 className="w-5 h-5 text-blue-600" />
                   <span className="text-gray-700">500+ professionally trained cleaners</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#3aa724]" />
+                  <CheckCircle2 className="w-5 h-5 text-blue-600" />
                   <span className="text-gray-700">100% satisfaction guarantee on every service</span>
                 </div>
               </div>
@@ -162,7 +162,7 @@ export default function AboutPage() {
       </section>
 
       {/* ===== CORE VALUES SECTION ===== */}
-      <section className="py-20 px-4 bg-[#f8f9f6]">
+      <section className="py-20 px-4 bg-slate-50">
         <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -171,7 +171,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-[#e4f4d2] text-[#3aa724] rounded-full text-sm font-semibold mb-6">
+            <span className="inline-block px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-semibold mb-6">
               OUR VALUES
             </span>
             <h2 className="text-4xl md:text-5xl font-medium text-[#111827]">What We Stand For</h2>
@@ -194,8 +194,8 @@ export default function AboutPage() {
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-[#e4f4d2]">
-                        <Icon className="h-6 w-6 text-[#3aa724]" />
+                      <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-blue-50">
+                        <Icon className="h-6 w-6 text-blue-600" />
                       </div>
                     </div>
                     <div>
@@ -215,7 +215,7 @@ export default function AboutPage() {
       </section>
 
       {/* ===== STATS SECTION ===== */}
-      <section className="py-16 px-4 bg-[#3aa724]">
+      <section className="py-16 px-4 bg-blue-600">
         <div className="container mx-auto max-w-7xl">
           <motion.div
             variants={containerVariants}
@@ -229,7 +229,7 @@ export default function AboutPage() {
                 <div className="text-4xl md:text-5xl font-bold text-white mb-2">
                   {stat.number}
                 </div>
-                <div className="text-[#e4f4d2] text-sm md:text-base">
+                <div className="text-blue-100 text-sm md:text-base">
                   {stat.label}
                 </div>
               </motion.div>
@@ -248,7 +248,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-[#e4f4d2] text-[#3aa724] rounded-full text-sm font-semibold mb-6">
+            <span className="inline-block px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-semibold mb-6">
               MILESTONE
             </span>
             <h2 className="text-4xl md:text-5xl font-medium text-[#111827]">Our Journey</h2>
@@ -264,13 +264,13 @@ export default function AboutPage() {
             {timeline.map((item, idx) => (
               <motion.div key={idx} variants={itemVariants} className="flex gap-8">
                 <div className="flex flex-col items-center">
-                  <div className="w-4 h-4 rounded-full bg-[#3aa724] mb-4"></div>
+                  <div className="w-4 h-4 rounded-full bg-blue-600 mb-4"></div>
                   {idx < timeline.length - 1 && (
-                    <div className="w-1 h-24 bg-[#e4f4d2]"></div>
+                    <div className="w-1 h-24 bg-blue-100"></div>
                   )}
                 </div>
                 <div className="pb-8">
-                  <h3 className="text-2xl font-bold text-[#3aa724] mb-2">
+                  <h3 className="text-2xl font-bold text-blue-600 mb-2">
                     {item.year}
                   </h3>
                   <h4 className="text-xl font-semibold text-gray-900 mb-2">
@@ -287,7 +287,7 @@ export default function AboutPage() {
       </section>
 
       {/* ===== TEAM SECTION ===== */}
-      <section className="py-20 px-4 bg-[#f8f9f6]">
+      <section className="py-20 px-4 bg-slate-50">
         <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -296,10 +296,10 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-[#e4f4d2] text-[#3aa724] rounded-full text-sm font-semibold mb-6">
+            <span className="inline-block px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-semibold mb-6">
               MEET OUR TEAM
             </span>
-            <h2 className="text-4xl md:text-5xl font-medium text-[#111827] mb-4">Meet the People Behind MaidEase</h2>
+            <h2 className="text-4xl md:text-5xl font-medium text-[#111827] mb-4">Meet the People Behind BB HOSPITALITY</h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
               Our team of 500+ professional cleaners are trained, certified, and dedicated to making your home sparkle.
             </p>
@@ -323,7 +323,7 @@ export default function AboutPage() {
       </section>
 
       {/* ===== CTA SECTION ===== */}
-      <section className="py-20 px-4 bg-[#e4f4d2]">
+      <section className="py-20 px-4 bg-blue-50">
         <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -333,16 +333,16 @@ export default function AboutPage() {
             className="text-center"
           >
             <h2 className="text-4xl md:text-5xl font-medium text-[#111827] mb-6 leading-[1.15]">
-              Ready to Experience the MaidEase Difference?
+              Ready to Experience the BB HOSPITALITY Difference?
             </h2>
             <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-8 leading-relaxed">
               Join thousands of happy customers who trust us with their homes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-[#3aa724] hover:bg-[#2d851c] text-white font-semibold px-8 py-6 rounded-full text-base transition-transform hover:scale-105">
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-6 rounded-full text-base transition-transform hover:scale-105">
                 Get Your Free Quote Today
               </Button>
-              <Button className="bg-white hover:bg-gray-100 text-[#3aa724] font-semibold px-8 py-6 rounded-full text-base border-2 border-[#3aa724] transition-transform hover:scale-105">
+              <Button className="bg-white hover:bg-gray-100 text-blue-600 font-semibold px-8 py-6 rounded-full text-base border-2 border-blue-600 transition-transform hover:scale-105">
                 Contact Us
               </Button>
             </div>

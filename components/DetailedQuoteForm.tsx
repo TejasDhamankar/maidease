@@ -51,8 +51,8 @@ export default function DetailedQuoteForm({ embedded }: DetailedQuoteFormProps) 
       }
 
       setSuccess(true);
-    } catch (err: any) {
-      setError(err.message || "An error occurred");
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "An error occurred");
     } finally {
       setLoading(false);
     }
@@ -73,10 +73,10 @@ export default function DetailedQuoteForm({ embedded }: DetailedQuoteFormProps) 
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="bg-green-50 border border-green-200 text-green-800 rounded-xl p-6 text-center space-y-4"
+          className="bg-blue-50 border border-blue-200 text-blue-800 rounded-xl p-6 text-center space-y-4"
         >
-          <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto">
-            <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
+            <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
             </svg>
           </div>
@@ -99,7 +99,7 @@ export default function DetailedQuoteForm({ embedded }: DetailedQuoteFormProps) 
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Your Name"
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 outline-none focus:ring-2 focus:ring-[#3aa724] transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 outline-none focus:ring-2 focus:ring-blue-600 transition-all"
               />
             </div>
             <div className="space-y-2">
@@ -109,7 +109,7 @@ export default function DetailedQuoteForm({ embedded }: DetailedQuoteFormProps) 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email Address"
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 outline-none focus:ring-2 focus:ring-[#3aa724] transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 outline-none focus:ring-2 focus:ring-blue-600 transition-all"
               />
             </div>
           </div>
@@ -121,7 +121,7 @@ export default function DetailedQuoteForm({ embedded }: DetailedQuoteFormProps) 
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               placeholder="Phone Number"
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 outline-none focus:ring-2 focus:ring-[#3aa724] transition-all"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 outline-none focus:ring-2 focus:ring-blue-600 transition-all"
             />
           </div>
 
@@ -132,7 +132,7 @@ export default function DetailedQuoteForm({ embedded }: DetailedQuoteFormProps) 
                 name="service"
                 value={service}
                 onChange={(e) => setService(e.target.value)}
-                className="w-full px-5 py-3 rounded-xl border border-gray-200 bg-white appearance-none focus:ring-2 focus:ring-[#3aa724] outline-none transition-all"
+                className="w-full px-5 py-3 rounded-xl border border-gray-200 bg-white appearance-none focus:ring-2 focus:ring-blue-600 outline-none transition-all"
               >
                 <option value="" disabled>Select a service</option>
                 {services.map((s) => (
@@ -150,7 +150,7 @@ export default function DetailedQuoteForm({ embedded }: DetailedQuoteFormProps) 
                 <label 
                   key={option} 
                   className={`flex items-center p-3 rounded-xl border cursor-pointer transition-colors group ${
-                    urgency === option ? "border-[#3aa724] bg-green-50/30" : "border-gray-200 hover:border-[#3aa724]"
+                    urgency === option ? "border-blue-600 bg-blue-50/30" : "border-gray-200 hover:border-blue-600"
                   }`}
                 >
                   <input 
@@ -159,10 +159,10 @@ export default function DetailedQuoteForm({ embedded }: DetailedQuoteFormProps) 
                     value={option}
                     checked={urgency === option}
                     onChange={(e) => setUrgency(e.target.value)}
-                    className="w-4 h-4 text-[#3aa724] focus:ring-[#3aa724]" 
+                    className="w-4 h-4 text-blue-600 focus:ring-blue-600" 
                   />
                   <span className={`ml-3 text-sm font-medium transition-colors ${
-                    urgency === option ? "text-[#3aa724]" : "text-gray-700 group-hover:text-[#3aa724]"
+                    urgency === option ? "text-blue-600" : "text-gray-700 group-hover:text-blue-600"
                   }`}>{option}</span>
                 </label>
               ))}
@@ -178,7 +178,7 @@ export default function DetailedQuoteForm({ embedded }: DetailedQuoteFormProps) 
           <button 
             type="submit" 
             disabled={loading}
-            className={`w-full bg-[#3aa724] hover:bg-[#2d851c] text-white font-bold py-4 rounded-xl transition-all shadow-lg flex items-center justify-center mt-4 ${
+            className={`w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg flex items-center justify-center mt-4 ${
               loading ? "opacity-75 cursor-not-allowed" : ""
             }`}
           >

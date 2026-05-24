@@ -50,7 +50,7 @@ export default function AboutAndFeatures() {
       {/* Background Split Layer (White top, Green bottom) */}
       <div className="absolute inset-0 z-0 flex flex-col">
         <div className="h-[250px] lg:h-[350px] w-full bg-white"></div>
-        <div className="flex-1 w-full bg-[#3aa724]"></div>
+        <div className="flex-1 w-full bg-blue-600"></div>
       </div>
 
       {/* Centralized Container */}
@@ -76,7 +76,7 @@ export default function AboutAndFeatures() {
             </h2>
             
             <p className="text-gray-500 text-lg mb-8 leading-relaxed max-w-lg">
-              At MaidEase, our mission is to provide the most convenient platform for connecting you with exceptional, professional cleaners who deliver outstanding results.
+              At BB HOSPITALITY, our mission is to provide the most convenient platform for connecting you with exceptional, professional hospitality staff who deliver outstanding results.
             </p>
             
             <div className="space-y-4 mb-10">
@@ -128,7 +128,7 @@ export default function AboutAndFeatures() {
           >
             <div className="flex items-center gap-2 mb-3">
               <span className="text-xs font-bold tracking-widest uppercase">WHY CHOOSE US</span>
-              <span className="text-green-300 text-lg font-light leading-none -mt-1">{"//"}</span>
+              <span className="text-sky-200 text-lg font-light leading-none -mt-1">{"//"}</span>
             </div>
             <h2 className="text-4xl md:text-[2.75rem] font-medium leading-tight">We Are Experienced & We <br className="hidden md:block"/> Have Expert Teams</h2>
           </motion.div>
@@ -148,7 +148,7 @@ export default function AboutAndFeatures() {
                   className={`bg-[#f0f6ea] p-8 ${feature.radius} hover:-translate-y-2 transition-transform duration-300 group shadow-sm`}
                 >
                   <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center mb-6 shadow-sm">
-                    <Icon className="w-6 h-6 text-[#3aa724]" strokeWidth={1.5} />
+                    <Icon className="w-6 h-6 text-blue-600" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-xl font-medium text-gray-900 mb-3 leading-snug">{feature.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{feature.desc}</p>
@@ -158,7 +158,7 @@ export default function AboutAndFeatures() {
           </div>
 
           {/* Stats band with a clean bottom CTA */}
-          <div className="relative mt-20 overflow-hidden rounded-b-[2.75rem] bg-[#3aa724] px-4 pb-14 pt-10 text-white">
+          <div className="relative mt-20 overflow-hidden rounded-b-[2.75rem] bg-blue-600 px-4 pb-14 pt-10 text-white">
             <div className="grid grid-cols-1 md:grid-cols-4 max-w-7xl mx-auto px-4 lg:px-8">
               {stats.map((stat, index) => (
                 <motion.div

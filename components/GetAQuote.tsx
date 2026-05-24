@@ -75,7 +75,7 @@ export default function GetAQuote() {
           >
             <div className="flex items-center gap-2 mb-2">
               <span className="text-[10px] font-bold tracking-widest text-gray-800 uppercase">GET YOUR FREE ESTIMATE</span>
-              <span className="text-[#3aa724] text-lg font-light leading-none -mt-1">{"//"}</span>
+              <span className="text-blue-600 text-lg font-light leading-none -mt-1">{"//"}</span>
             </div>
             
             <h2 className="text-4xl md:text-[2.75rem] font-medium text-[#111827] mb-10 leading-tight">
@@ -86,10 +86,10 @@ export default function GetAQuote() {
               <motion.div 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 text-center space-y-4 shadow-xl border border-[#3aa724]/20"
+                className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 text-center space-y-4 shadow-xl border border-blue-600/20"
               >
-                <div className="w-16 h-16 bg-[#3aa724]/10 rounded-full flex items-center justify-center mx-auto">
-                  <Check className="w-8 h-8 text-[#3aa724]" />
+                <div className="w-16 h-16 bg-blue-600/10 rounded-full flex items-center justify-center mx-auto">
+                  <Check className="w-8 h-8 text-blue-600" />
                 </div>
                 <h3 className="text-2xl font-bold text-[#111827]">Request Sent!</h3>
                 <p className="text-gray-600">Thank you for your interest. We will contact you shortly with your free estimate.</p>
@@ -102,7 +102,7 @@ export default function GetAQuote() {
                     setSelectedService("");
                     setUrgency("");
                     }}
-                  className="text-[#3aa724] hover:underline font-bold"
+                  className="text-blue-600 hover:underline font-bold"
                 >
                   Submit another request
                 </button>
@@ -116,7 +116,7 @@ export default function GetAQuote() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
-                    className="w-full px-5 py-3.5 rounded-xl border-none outline-none focus:ring-2 focus:ring-[#3aa724]/50 shadow-sm text-sm placeholder:text-gray-600 bg-white/70" 
+                    className="w-full px-5 py-3.5 rounded-xl border-none outline-none focus:ring-2 focus:ring-blue-600/50 shadow-sm text-sm placeholder:text-gray-600 bg-white/70" 
                   />
                   <input 
                     type="email" 
@@ -124,7 +124,7 @@ export default function GetAQuote() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="w-full px-5 py-3.5 rounded-xl border-none outline-none focus:ring-2 focus:ring-[#3aa724]/50 shadow-sm text-sm placeholder:text-gray-600 bg-white/70" 
+                    className="w-full px-5 py-3.5 rounded-xl border-none outline-none focus:ring-2 focus:ring-blue-600/50 shadow-sm text-sm placeholder:text-gray-600 bg-white/70" 
                   />
                   <input 
                     type="tel" 
@@ -132,7 +132,7 @@ export default function GetAQuote() {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     required
-                    className="w-full px-5 py-3.5 rounded-xl border-none outline-none focus:ring-2 focus:ring-[#3aa724]/50 shadow-sm text-sm placeholder:text-gray-600 bg-white/70" 
+                    className="w-full px-5 py-3.5 rounded-xl border-none outline-none focus:ring-2 focus:ring-blue-600/50 shadow-sm text-sm placeholder:text-gray-600 bg-white/70" 
                   />
                 </div>
 
@@ -142,7 +142,7 @@ export default function GetAQuote() {
                     value={selectedService}
                     onChange={(e) => setSelectedService(e.target.value)}
                     required
-                    className="w-full px-5 py-3.5 rounded-xl border-none outline-none focus:ring-2 focus:ring-[#3aa724]/50 shadow-sm text-sm text-gray-600 appearance-none bg-white/70 cursor-pointer"
+                    className="w-full px-5 py-3.5 rounded-xl border-none outline-none focus:ring-2 focus:ring-blue-600/50 shadow-sm text-sm text-gray-600 appearance-none bg-white/70 cursor-pointer"
                   >
                     <option value="" disabled>What do you want your maid to do?</option>
                     {services.map(s => <option key={s} value={s}>{s}</option>)}
@@ -153,14 +153,14 @@ export default function GetAQuote() {
                 {/* Urgency Selection */}
                 <div className="grid gap-3">
                   {urgencyOptions.map(option => (
-                    <label key={option} className={`flex items-center p-4 rounded-xl border ${urgency === option ? 'border-[#3aa724] bg-white' : 'border-transparent bg-white/50'} cursor-pointer transition-all`}>
+                    <label key={option} className={`flex items-center p-4 rounded-xl border ${urgency === option ? 'border-blue-600 bg-white' : 'border-transparent bg-white/50'} cursor-pointer transition-all`}>
                       <input 
                         type="radio" 
                         name="urgency" 
                         value={option} 
                         checked={urgency === option}
                         onChange={() => setUrgency(option)} 
-                        className="w-5 h-5 text-[#3aa724] focus:ring-[#3aa724]" 
+                        className="w-5 h-5 text-blue-600 focus:ring-blue-600" 
                       />
                       <span className="ml-3 font-medium text-gray-700">{option}</span>
                     </label>
@@ -198,7 +198,7 @@ export default function GetAQuote() {
             <motion.div className="relative bg-[#f8f9f6] rounded-[2.5rem] p-8 md:p-10 overflow-hidden shadow-sm flex flex-col justify-center min-h-[220px]">
               <div className="relative z-10 w-full md:w-[70%]">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="bg-white rounded-full"><CheckCircle2 className="w-8 h-8 text-white fill-[#3aa724]" /></div>
+                  <div className="bg-white rounded-full"><CheckCircle2 className="w-8 h-8 text-white fill-blue-600" /></div>
                   <h3 className="text-2xl font-medium text-gray-900 leading-none">100% Satisfaction Guarantee</h3>
                 </div>
                 <p className="text-gray-500 text-[15px] leading-relaxed">Your satisfaction is our top priority! We proudly offer a 100% Happiness Guarantee on all our cleanings.</p>

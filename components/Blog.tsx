@@ -36,7 +36,7 @@ export default function Blog() {
         >
           <div className="flex items-center gap-2 mb-3">
             <span className="text-xs font-bold tracking-widest text-gray-800 uppercase">FROM OUR BLOG</span>
-            <span className="text-[#3aa724] text-lg font-light leading-none -mt-1">{"//"}</span>
+            <span className="text-blue-600 text-lg font-light leading-none -mt-1">{"//"}</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-medium text-[#111827]">
             Cleaning Tips From Pros
@@ -66,10 +66,10 @@ export default function Blog() {
               
               {/* Content */}
               <div className="flex flex-col px-2">
-                <span className="text-[#3aa724] text-xs font-bold uppercase tracking-wider mb-3">
+                <span className="text-blue-600 text-xs font-bold uppercase tracking-wider mb-3">
                   {post.category}
                 </span>
-                <h3 className="text-2xl font-medium text-gray-900 leading-snug group-hover:text-[#3aa724] transition-colors">
+                <h3 className="text-2xl font-medium text-gray-900 leading-snug group-hover:text-blue-600 transition-colors">
                   {post.title}
                 </h3>
               </div>
@@ -79,7 +79,7 @@ export default function Blog() {
 
         {/* Bottom Button */}
         <div className="mt-16 flex justify-center">
-          <Button variant="outline" className="border-[#3aa724] text-gray-900 hover:bg-[#f4f9ed] font-medium px-10 py-6 rounded-full text-base transition-colors bg-transparent">
+          <Button variant="outline" className="border-blue-600 text-gray-900 hover:bg-blue-50 font-medium px-10 py-6 rounded-full text-base transition-colors bg-transparent">
             More Tips
           </Button>
         </div>

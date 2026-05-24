@@ -17,7 +17,6 @@ import {
   LayoutDashboardIcon, 
   UsersIcon, 
   LogOutIcon, 
-  User,
   ChevronUp
 } from "lucide-react"
 import { logout } from "@/app/admin/login/actions"
@@ -34,12 +33,12 @@ export function AdminSidebar({ ...props }: React.ComponentProps<typeof Sidebar>)
     <Sidebar collapsible="offcanvas" className="border-r border-slate-200" {...props}>
       <SidebarHeader className="p-4">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 bg-[#3aa724] rounded-xl flex items-center justify-center shadow-lg shadow-emerald-200">
-            <span className="text-white font-bold text-xl leading-none">M</span>
+          <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-200">
+            <span className="text-white font-bold text-sm leading-none">BB</span>
           </div>
           <div className="flex flex-col">
-            <span className="text-base font-semibold text-slate-900 leading-tight">MaidEase</span>
-            <span className="text-[10px] font-bold text-emerald-600 uppercase tracking-widest">Admin Portal</span>
+            <span className="text-base font-semibold text-slate-900 leading-tight">BB HOSPITALITY</span>
+            <span className="text-[10px] font-bold text-blue-600 uppercase tracking-widest">Admin Portal</span>
           </div>
         </div>
       </SidebarHeader>
@@ -53,7 +52,7 @@ export function AdminSidebar({ ...props }: React.ComponentProps<typeof Sidebar>)
                 <SidebarMenuButton 
                   asChild 
                   isActive={true}
-                  className="px-4 h-11 rounded-xl data-[active=true]:bg-emerald-50 data-[active=true]:text-emerald-700 hover:bg-slate-50 transition-colors"
+                  className="px-4 h-11 rounded-xl data-[active=true]:bg-blue-50 data-[active=true]:text-blue-700 hover:bg-slate-50 transition-colors"
                 >
                   <a href="/admin/dashboard">
                     <LayoutDashboardIcon className="size-4" />
@@ -88,7 +87,7 @@ export function AdminSidebar({ ...props }: React.ComponentProps<typeof Sidebar>)
                 </Avatar>
                 <div className="flex flex-col items-start">
                   <span className="text-sm font-semibold text-slate-700 leading-none mb-1">Administrator</span>
-                  <span className="text-[10px] text-slate-400 font-medium">admin@maidease.com</span>
+                  <span className="text-[10px] text-slate-400 font-medium">admin@bbhospitality.in</span>
                 </div>
               </div>
               <ChevronUp className="size-4 text-slate-400" />

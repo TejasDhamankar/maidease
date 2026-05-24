@@ -36,7 +36,7 @@ export default function AdminLogin() {
           fill
           className="object-cover opacity-20"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-white/80 to-[#eef7dc]/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-white/85 to-blue-50"></div>
       </div>
 
       {/* Floating Leaves */}
@@ -62,11 +62,11 @@ export default function AdminLogin() {
         className="relative z-20 w-full max-w-md bg-[#f8f9f6]/95 backdrop-blur-md p-8 sm:p-10 rounded-[2.5rem] shadow-2xl border border-white"
       >
         <div className="flex flex-col items-center mb-8">
-          <div className="w-12 h-12 bg-[#3aa724] rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-[#3aa724]/20">
-            <span className="text-white font-bold text-2xl">M</span>
+          <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-blue-600/20">
+            <span className="text-white font-bold text-xl">BB</span>
           </div>
           <h1 className="text-3xl font-medium text-[#111827] tracking-tight text-center">
-            Admin Portal
+            BB HOSPITALITY Admin
           </h1>
           <p className="text-gray-500 text-sm mt-2">Welcome back! Please login to your account.</p>
         </div>
@@ -80,8 +80,8 @@ export default function AdminLogin() {
                 name="email" 
                 type="email" 
                 required 
-                placeholder="admin@maidease.com"
-                className="pl-11 h-14 rounded-2xl border-gray-100 bg-white/50 focus:bg-white focus:ring-[#3aa724] transition-all"
+                placeholder="admin@bbhospitality.in"
+                className="pl-11 h-14 rounded-2xl border-gray-100 bg-white/50 focus:bg-white focus:ring-blue-600 transition-all"
               />
             </div>
           </div>
@@ -95,7 +95,7 @@ export default function AdminLogin() {
                 type="password" 
                 required 
                 placeholder="••••••••"
-                className="pl-11 h-14 rounded-2xl border-gray-100 bg-white/50 focus:bg-white focus:ring-[#3aa724] transition-all"
+                className="pl-11 h-14 rounded-2xl border-gray-100 bg-white/50 focus:bg-white focus:ring-blue-600 transition-all"
               />
             </div>
           </div>
@@ -112,7 +112,7 @@ export default function AdminLogin() {
 
           <Button 
             disabled={loading}
-            className="w-full h-14 bg-[#fbbf24] hover:bg-[#f59e0b] text-black font-bold rounded-2xl text-base shadow-lg shadow-[#fbbf24]/20 transition-transform active:scale-95"
+            className="w-full h-14 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold rounded-2xl text-base shadow-lg shadow-blue-600/20 transition-transform active:scale-95"
           >
             {loading ? (
               <div className="w-6 h-6 border-2 border-black/20 border-t-black rounded-full animate-spin" />
@@ -122,11 +122,11 @@ export default function AdminLogin() {
 
         <div className="mt-8 flex justify-center gap-4">
           <div className="flex items-center gap-2 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-            <CheckCircle2 className="w-3 h-3 text-[#3aa724]" />
+            <CheckCircle2 className="w-3 h-3 text-blue-600" />
             Secure
           </div>
           <div className="flex items-center gap-2 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-            <CheckCircle2 className="w-3 h-3 text-[#3aa724]" />
+            <CheckCircle2 className="w-3 h-3 text-blue-600" />
             Encrypted
           </div>
         </div>

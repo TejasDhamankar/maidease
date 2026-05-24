@@ -37,7 +37,7 @@ export default function FAQ() {
             <div className="mb-10">
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-xs font-bold tracking-widest text-gray-800 uppercase">FAQS</span>
-                <span className="text-[#3aa724] text-lg font-light leading-none -mt-1">{"//"}</span>
+                <span className="text-blue-600 text-lg font-light leading-none -mt-1">{"//"}</span>
               </div>
               <h2 className="text-4xl md:text-5xl font-medium text-[#111827] leading-tight">
                 Frequently Asked <br/> Questions

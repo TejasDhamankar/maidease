@@ -17,7 +17,7 @@ export default function Hero() {
         <div className="absolute inset-0 z-0">
           <Image 
             src="/Hero_Background_Image.png" 
-            alt="MaidEase Cleaning Professional" 
+            alt="BB HOSPITALITY professional staff" 
             fill
             className="object-cover object-[80%_center] md:object-right"
             priority
@@ -46,7 +46,7 @@ export default function Hero() {
         <div className="relative z-30 w-full md:w-[70%] lg:w-[52%] bg-[#f8f9f6]/95 backdrop-blur-sm p-8 sm:p-10 lg:p-12 rounded-[2rem] shadow-2xl border border-white/50">
           
           <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-medium tracking-tight text-[#111827] mb-6 leading-[1.15]">
-            MaidEase Residential <br className="hidden xl:block"/> and Commercial <br className="hidden xl:block"/> Cleaning Services
+            BB HOSPITALITY Residential <br className="hidden xl:block"/> and Commercial <br className="hidden xl:block"/> Services
           </h1>
           
           <p className="text-lg text-gray-500 mb-8 max-w-[90%] leading-relaxed">
@@ -57,22 +57,22 @@ export default function Hero() {
             <Button className="bg-[#fbbf24] hover:bg-[#f59e0b] text-black font-semibold px-8 py-6 rounded-full text-base transition-transform hover:scale-105">
               Free Quote
             </Button>
-            <Button variant="outline" className="border-green-600 text-green-700 hover:bg-green-50 font-semibold px-8 py-6 rounded-full text-base transition-colors bg-transparent">
+            <Button variant="outline" className="border-blue-600 text-blue-700 hover:bg-blue-50 font-semibold px-8 py-6 rounded-full text-base transition-colors bg-transparent">
               Our Services
             </Button>
           </div>
 
           <div className="flex flex-wrap gap-4 sm:gap-6 pt-2">
             <div className="flex items-center gap-2 text-sm font-medium text-gray-500">
-              <CheckCircle2 className="w-5 h-5 text-white fill-[#4ade80]" />
+              <CheckCircle2 className="w-5 h-5 text-white fill-blue-600" />
               Professional
             </div>
             <div className="flex items-center gap-2 text-sm font-medium text-gray-500">
-              <CheckCircle2 className="w-5 h-5 text-white fill-[#4ade80]" />
+              <CheckCircle2 className="w-5 h-5 text-white fill-blue-600" />
               Friendly
             </div>
             <div className="flex items-center gap-2 text-sm font-medium text-gray-500">
-              <CheckCircle2 className="w-5 h-5 text-white fill-[#4ade80]" />
+              <CheckCircle2 className="w-5 h-5 text-white fill-blue-600" />
               Convenient
             </div>
           </div>

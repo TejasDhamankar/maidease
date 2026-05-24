@@ -24,14 +24,14 @@ export default function Testimonials() {
       name: "JESSICA CLARK",
       role: "Customer",
       image: "/Service_Card_1.png", // Replace with actual avatar
-      text: "Amazing and highly efficient, met all my expectations and more, they were there on time and left my duplex in pristine conditions. Thank MaidEase."
+      text: "Amazing and highly efficient, met all my expectations and more, they were there on time and left my duplex in pristine conditions. Thank BB HOSPITALITY."
     },
     {
       id: 2,
       name: "CARLOS MOYA",
       role: "Customer",
       image: "/Service_Card_2.png", // Replace with actual avatar
-      text: "Amazing and highly efficient, met all my expectations and more, they were there on time and left my duplex in pristine conditions. Thank MaidEase."
+      text: "Amazing and highly efficient, met all my expectations and more, they were there on time and left my duplex in pristine conditions. Thank BB HOSPITALITY."
     },
     {
       id: 3,
@@ -69,7 +69,7 @@ export default function Testimonials() {
           >
             <div className="flex items-center gap-2 mb-3">
               <span className="text-xs font-bold tracking-widest text-gray-800 uppercase">TESTIMONIALS</span>
-              <span className="text-[#3aa724] text-lg font-light leading-none -mt-1">{"//"}</span>
+              <span className="text-blue-600 text-lg font-light leading-none -mt-1">{"//"}</span>
             </div>
             <h2 className="text-4xl md:text-[2.75rem] font-medium text-[#111827] leading-tight">
               Empowering Thousands of <br className="hidden md:block" /> Users and Enterprises

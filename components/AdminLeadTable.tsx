@@ -74,7 +74,7 @@ const columns: ColumnDef<Lead>[] = [
     accessorKey: "service",
     header: "Service",
     cell: ({ row }) => (
-      <Badge variant="outline" className="bg-emerald-50/30 border-emerald-100 text-emerald-700 px-2.5 py-0.5 rounded-lg font-medium text-[11px]">
+      <Badge variant="outline" className="bg-blue-50/30 border-blue-100 text-blue-700 px-2.5 py-0.5 rounded-lg font-medium text-[11px]">
         {row.getValue("service")}
       </Badge>
     ),

@@ -42,7 +42,7 @@ export default function Services() {
         >
           <div className="flex items-center gap-2 mb-3">
             <span className="text-xs font-bold tracking-widest text-gray-800 uppercase">OUR SERVICES</span>
-            <span className="text-[#3aa724] text-lg font-light leading-none -mt-1">{"//"}</span>
+            <span className="text-blue-600 text-lg font-light leading-none -mt-1">{"//"}</span>
           </div>
           <h2 className="text-4xl md:text-[2.75rem] font-medium text-[#111827] leading-[1.15]">
             Here&apos;s What We Can <br className="hidden md:block" /> Do for You
@@ -73,7 +73,7 @@ export default function Services() {
                   />
                   {/* Floating Squircle Icon */}
                   <div className="absolute top-4 left-4 w-12 h-12 bg-white/95 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-sm z-10">
-                    <Icon className="w-6 h-6 text-[#3aa724]" strokeWidth={1.5} />
+                    <Icon className="w-6 h-6 text-blue-600" strokeWidth={1.5} />
                   </div>
                 </div>
 
@@ -88,8 +88,8 @@ export default function Services() {
                   {/* Custom Learn More Button */}
                   <div className="mt-auto bg-white rounded-full p-1.5 pl-6 flex items-center justify-between cursor-pointer hover:ring-2 hover:ring-white/50 transition-all">
                     <span className="text-sm font-semibold text-gray-900">Learn more</span>
-                    <div className="w-8 h-8 rounded-full bg-[#e2f6d1] flex items-center justify-center group-hover:bg-[#3aa724] transition-colors duration-300">
-                      <ChevronRight className="w-4 h-4 text-[#3aa724] group-hover:text-white transition-colors duration-300" strokeWidth={2.5} />
+                    <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-600 transition-colors duration-300">
+                      <ChevronRight className="w-4 h-4 text-blue-600 group-hover:text-white transition-colors duration-300" strokeWidth={2.5} />
                     </div>
                   </div>
                 </div>

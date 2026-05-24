@@ -1,136 +1,99 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import Image from "next/image";
+import Link from "next/link";
+import { Mail, MapPin, Phone } from "lucide-react";
+
+const quickLinks = ["About Us", "Vision Mission", "Services", "Contact Us", "FAQ", "Our Price"];
+const policyLinks = ["Privacy Policy", "Refund Policy", "Terms & Conditions"];
 
 export default function Footer() {
-  const socialLinks = [
-    {
-      label: "Facebook",
-      icon: (
-        <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">
-          <path d="M14 8.5h2V5h-2.4C10.8 5 9 6.8 9 9.8V12H6v3.5h3V23h4v-7.5h2.8l.5-3.5H13v-1.9c0-1.1.4-1.6 1-1.6Z" />
-        </svg>
-      ),
-    },
-    {
-      label: "Instagram",
-      icon: (
-        <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-none stroke-current stroke-[2]">
-          <rect width="16" height="16" x="4" y="4" rx="4" />
-          <circle cx="12" cy="12" r="3.5" />
-          <circle cx="17" cy="7" r="1" className="fill-current stroke-none" />
-        </svg>
-      ),
-    },
-    {
-      label: "X",
-      icon: (
-        <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">
-          <path d="M14.2 10.4 21.7 2h-2.9l-5.9 6.6L8.2 2H2l7.8 11-7.9 9h2.9l6.3-7.2 5.1 7.2h6.2l-8.2-11.6Zm-2 2.3-1.3-1.8L5.8 4.2h1.3l4.8 6.3 1.3 1.8 5.4 7.4h-1.3l-5.1-7Z" />
-        </svg>
-      ),
-    },
-    {
-      label: "YouTube",
-      icon: (
-        <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-current">
-          <path d="M21.5 7.2a3 3 0 0 0-2.1-2.1C17.5 4.6 12 4.6 12 4.6s-5.5 0-7.4.5a3 3 0 0 0-2.1 2.1A31 31 0 0 0 2 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 7.4.5 7.4.5s5.5 0 7.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 22 12a31 31 0 0 0-.5-4.8ZM10 15.4V8.6l5.8 3.4L10 15.4Z" />
-        </svg>
-      ),
-    },
-  ];
-  const services = [
-    "Maid",
-    "Cook",
-    "Baby Sitter",
-    "Baby Massage",
-    "Patient Care",
-    "Elder Care",
-    "Driver",
-    "Nursing",
-    "Japa Maid",
-    "Delivery boy",
-    "Security Guard",
-    "Housekeeping",
-    "Office Support",
-  ];
-
   return (
-    <footer className="bg-[#e4f4d2] pt-20 pb-8 rounded-t-[3rem] px-4 lg:px-8">
-      <div className="container mx-auto max-w-7xl">
-        {/* Top Section: Goal, Newsletter, Links */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-          
-          {/* Column 1: Goal */}
-          <div className="lg:col-span-1">
-            <h2 className="text-3xl font-medium text-gray-900 mb-8 leading-tight">
-              Our Goal is to Wow You With Every Clean
-            </h2>
-            <Button className="bg-[#fbbf24] hover:bg-[#f59e0b] text-black font-semibold px-8 py-6 rounded-full text-base transition-transform hover:scale-105">
-              Get a Free Quote
-            </Button>
-            <div className="mt-8 opacity-60">
-                <Image src="/footer-leafs-2.webp" alt="leaf" width={40} height={40} />
-            </div>
+    <footer className="bg-blue-950 text-white">
+      <div className="mx-auto grid max-w-5xl gap-10 px-4 py-12 md:grid-cols-[1.2fr_1fr_1fr_1.5fr]">
+        <div>
+          <div className="mb-4 inline-flex items-center gap-2 rounded-lg bg-white px-4 py-3 text-blue-950 shadow-lg">
+            <span className="flex size-9 items-center justify-center rounded-lg bg-blue-600 text-sm font-extrabold text-white">
+              BB
+            </span>
+            <span className="font-extrabold">BB HOSPITALITY</span>
           </div>
-
-          {/* Column 2: Services */}
-          <div className="space-y-4">
-            <h4 className="font-bold text-gray-900 uppercase tracking-wider text-sm mb-6">SERVICES</h4>
-            {services.map((service) => (
-              <a key={service} href="#" className="block text-gray-600 hover:text-[#3aa724] transition-colors">{service}</a>
-            ))}
-          </div>
-
-          {/* Column 3: Contact Info */}
-          <div className="space-y-6">
-            <h4 className="font-bold text-gray-900 uppercase tracking-wider text-sm mb-6">CONTACT INFO</h4>
-            <p className="text-gray-600">72 Kneeland St, Suite 305, <br/> New York, MA 02111</p>
-            <div className="bg-white inline-flex items-center gap-3 px-4 py-2 rounded-full shadow-sm">
-                <div className="bg-[#fbbf24] p-2 rounded-full"><span className="text-sm">📞</span></div>
-                <span className="font-semibold">+ 1 (180) 567-8990</span>
-            </div>
-            <a href="mailto:contact@clanyeco.com" className="block text-[#3aa724] font-medium underline">contact@clanyeco.com</a>
-          </div>
-
-          {/* Column 4: Newsletter/Working Hours */}
-          <div className="space-y-6">
-            <h4 className="font-bold text-gray-900 uppercase tracking-wider text-sm mb-6">WORKING HOURS</h4>
-            <div className="text-gray-600 space-y-2">
-                <p>Mon – Fri: <span className="font-medium">9.00am – 8.00pm</span></p>
-                <p>Saturday: <span className="font-medium">10.00am – 8.00pm</span></p>
-                <p>Sunday: <span className="font-medium">10.00am – 4.00pm</span></p>
-            </div>
-            
-            <div className="pt-6">
-                <h4 className="font-bold text-gray-900 uppercase tracking-wider text-sm mb-4">SUBSCRIBE TO OUR NEWSLETTER</h4>
-                <div className="flex gap-2">
-                    <Input placeholder="Enter our email address" className="bg-white rounded-full border-none shadow-sm" />
-                    <Button className="bg-[#3aa724] hover:bg-[#2d851c] text-white rounded-full px-6">Subscribe</Button>
-                </div>
-            </div>
+          <p className="text-sm leading-6 text-blue-100">
+            Premium maid, care, housekeeping, and hospitality staffing support for modern families and businesses.
+          </p>
+          <div className="mt-5 text-xs leading-6 text-blue-100">
+            <p className="font-bold text-white">Open Hours:</p>
+            <p>Mon - Sat: 9:30am - 6:30pm</p>
+            <p>Sunday: Closed</p>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-black/10 gap-6">
-          <p className="text-sm text-gray-500">© 2026 VamTam. All Rights Reserved</p>
-          <div className="flex gap-4 text-gray-600">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href="#"
-                aria-label={social.label}
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-xs font-semibold text-gray-700 transition-colors hover:bg-[#3aa724] hover:text-white"
-              >
-                {social.icon}
+        <div>
+          <h3 className="mb-4 text-lg font-extrabold">Quick Links</h3>
+          <div className="h-0.5 w-8 bg-yellow-400" />
+          <div className="mt-5 grid gap-3 text-sm font-semibold text-blue-100">
+            {quickLinks.map((link) => (
+              <Link key={link} href={link === "Contact Us" ? "/contact" : "#"} className="hover:text-white">
+                {link}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h3 className="mb-4 text-lg font-extrabold">Quick Links</h3>
+          <div className="h-0.5 w-8 bg-yellow-400" />
+          <div className="mt-5 grid gap-3 text-sm font-semibold text-blue-100">
+            {policyLinks.map((link) => (
+              <Link key={link} href="#" className="hover:text-white">
+                {link}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h3 className="mb-4 text-lg font-extrabold">Official Address</h3>
+          <div className="h-0.5 w-8 bg-yellow-400" />
+          <div className="mt-5 grid gap-3 text-sm font-semibold text-blue-100">
+            <p className="flex gap-2 leading-6">
+              <MapPin className="mt-1 size-4 shrink-0 text-sky-300" />
+              1904, Haware Infotech Park, Opp. Four Points Hotel, Sector 30A, Vashi, Navi Mumbai, Maharashtra 400703.
+            </p>
+            <a href="tel:+919867074050" className="flex items-center gap-2 hover:text-white">
+              <Phone className="size-4 text-sky-300" />
+              (+91) 9867074050
+            </a>
+            <a href="mailto:sales@bbhospitality.in" className="flex items-center gap-2 hover:text-white">
+              <Mail className="size-4 text-sky-300" />
+              sales@bbhospitality.in
+            </a>
+          </div>
+          <div className="mt-5 flex gap-3">
+            {["f", "x", "in"].map((label) => (
+              <a key={label} href="#" className="flex size-8 items-center justify-center rounded-full bg-white/10 text-xs font-extrabold text-white transition hover:bg-blue-600">
+                {label}
               </a>
             ))}
           </div>
         </div>
       </div>
+
+      <div className="border-t border-white/10 bg-blue-900 px-4 py-4 text-center text-xs font-semibold text-blue-100">
+        2026 All rights reserved by BB HOSPITALITY.
+      </div>
+
+      <nav className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-4 border-t border-slate-200 bg-white text-[11px] font-bold text-blue-950 shadow-[0_-8px_30px_rgba(15,23,42,0.12)] md:hidden">
+        {[
+          ["Home", "/"],
+          ["About", "/about"],
+          ["Services", "/services"],
+          ["Contact", "/contact"],
+        ].map(([label, href]) => (
+          <Link key={label} href={href} className="py-3 text-center hover:bg-blue-50">
+            {label}
+          </Link>
+        ))}
+      </nav>
     </footer>
   );
 }

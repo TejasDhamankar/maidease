@@ -1,9 +1,9 @@
 "use client";
 
 import { AdminLeadTable, Lead } from "@/components/AdminLeadTable";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardAction } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { TrendingUp, Users, Clock, CheckCircle2 } from "lucide-react";
+import { Users, Clock, CheckCircle2 } from "lucide-react";
 import { logout } from "../login/actions";
 import { Button } from "@/components/ui/button";
 
@@ -33,8 +33,8 @@ export default function DashboardContent({ initialLeads }: { initialLeads: Lead[
       icon: CheckCircle2,
       trend: "0%",
       description: "Successfully closed",
-      color: "text-emerald-600",
-      bg: "bg-emerald-50"
+      color: "text-blue-600",
+      bg: "bg-blue-50"
     }
   ];
 
@@ -83,7 +83,7 @@ export default function DashboardContent({ initialLeads }: { initialLeads: Lead[
       <div className="flex flex-col gap-6">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-semibold text-slate-900">Recent Service Leads</h2>
-          <Button variant="ghost" className="text-[#3aa724] font-medium text-sm hover:bg-emerald-50">View all leads</Button>
+          <Button variant="ghost" className="text-blue-600 font-medium text-sm hover:bg-blue-50">View all leads</Button>
         </div>
         <AdminLeadTable data={initialLeads} />
       </div>
