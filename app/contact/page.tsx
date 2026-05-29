@@ -7,17 +7,17 @@ import DetailedQuoteForm from "@/components/DetailedQuoteForm";
 const contactCards = [
   {
     title: "Email us",
-    value: "sales@bbhospitality.in",
+    value: "info@bbhospitality.in\noperations@bbhospitality.in",
     icon: Mail,
   },
   {
     title: "Call us",
-    value: "+1 (180) 567-8990",
+    value: "+91 9076354999",
     icon: Phone,
   },
   {
     title: "Our Location",
-    value: "72 Kneeland St, Suite 305, New York, MA 02111",
+    value: "Office No 1007, 10th Floor, The Land Mark, Sector 7, Kharghar-Navi Mumbai\nPin Code - 410210\nContact No: 9076354999\nEmail ID: info@bbhospitality.in",
     icon: MapPin,
   },
   {

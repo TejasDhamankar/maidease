@@ -13,7 +13,6 @@ import {
   Car,
   ChefHat,
   ClipboardCheck,
-  HeartPulse,
   Home,
   MessageCircle,
   Play,
@@ -28,19 +27,17 @@ import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
 
 const services = [
-  { title: "Maid", slug: "maid", icon: Sparkles },
-  { title: "Cook", slug: "cook", icon: ChefHat },
-  { title: "Baby Sitter", slug: "baby-sitter", icon: Baby },
-  { title: "Baby Massage", slug: "baby-massage", icon: HeartPulse },
-  { title: "Patient Care", slug: "patient-care", icon: Ambulance },
-  { title: "Elder Care", slug: "elder-care", icon: UserRoundCheck },
-  { title: "Driver", slug: "driver", icon: Car },
-  { title: "Nursing", slug: "nursing", icon: Stethoscope },
-  { title: "Japa Maid", slug: "japa-maid", icon: Baby },
-  { title: "Delivery Boy", slug: "delivery", icon: Bike },
-  { title: "Security Guard", slug: "security-guard", icon: ShieldCheck },
-  { title: "Housekeeping", slug: "housekeeping", icon: Home },
-  { title: "Office Support", slug: "office-support", icon: ClipboardCheck },
+  { title: "Maid", slug: "maid", icon: Sparkles, color: "text-lime-600", bg: "bg-lime-100", ring: "group-hover:ring-lime-200" },
+  { title: "Cook", slug: "cook", icon: ChefHat, color: "text-amber-500", bg: "bg-amber-100", ring: "group-hover:ring-amber-200" },
+  { title: "Baby Care & Delivery Service", displayTitle: "Baby Care", slug: "baby-care-delivery-service", icon: Baby, color: "text-rose-500", bg: "bg-rose-100", ring: "group-hover:ring-rose-200" },
+  { title: "Patient Care", slug: "patient-care", icon: Ambulance, color: "text-sky-600", bg: "bg-sky-100", ring: "group-hover:ring-sky-200" },
+  { title: "Elder Care", slug: "elder-care", icon: UserRoundCheck, color: "text-emerald-600", bg: "bg-emerald-100", ring: "group-hover:ring-emerald-200" },
+  { title: "Driver", slug: "driver", icon: Car, color: "text-indigo-600", bg: "bg-indigo-100", ring: "group-hover:ring-indigo-200" },
+  { title: "Nursing", slug: "nursing", icon: Stethoscope, color: "text-red-500", bg: "bg-red-100", ring: "group-hover:ring-red-200" },
+  { title: "Delivery Boy", slug: "delivery", icon: Bike, color: "text-orange-500", bg: "bg-orange-100", ring: "group-hover:ring-orange-200" },
+  { title: "Security Guard", slug: "security-guard", icon: ShieldCheck, color: "text-cyan-600", bg: "bg-cyan-100", ring: "group-hover:ring-cyan-200" },
+  { title: "Housekeeping", slug: "housekeeping", icon: Home, color: "text-blue-600", bg: "bg-blue-100", ring: "group-hover:ring-blue-200" },
+  { title: "Office Support", slug: "office-support", icon: ClipboardCheck, color: "text-violet-600", bg: "bg-violet-100", ring: "group-hover:ring-violet-200" },
 ];
 
 const benefits = [
@@ -86,9 +83,9 @@ const locations = [
   "Maid Services In Vile Parle",
   "Maid Services In Jogeshwari",
   "Maid Services In Goregaon",
-  "Baby Sitter Services In Borivali",
-  "Baby Sitter Services In Vasai",
-  "Baby Sitter Services In Virar",
+  "Baby Care & Delivery Service In Borivali",
+  "Baby Care & Delivery Service In Vasai",
+  "Baby Care & Delivery Service In Virar",
   "Cook Services In Malad",
   "Cook Services In Andheri",
   "Cook Services In Bandra",
@@ -176,22 +173,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="services" className="px-4 py-12">
-        <h2 className="text-center text-3xl font-extrabold text-rose-500 md:text-4xl">
+      <section id="services" className="bg-gradient-to-b from-white via-slate-50 to-white px-4 py-16">
+        <h2 className="text-center text-4xl font-black tracking-normal text-orange-500 md:text-5xl">
           Our Services
         </h2>
-        <div className="mx-auto mt-8 flex max-w-4xl flex-wrap justify-center gap-x-3 gap-y-4">
-          {services.map((item) => {
+        <div className="mx-auto mt-10 grid max-w-7xl grid-cols-2 justify-items-center gap-x-3 gap-y-5 sm:grid-cols-3 md:gap-x-5 lg:grid-cols-6 lg:gap-y-0">
+          {services.map((item, index) => {
             const Icon = item.icon;
             return (
               <Link
                 href={`/services/${item.slug}`}
                 key={item.title}
-                className="group flex h-28 w-28 flex-col items-center justify-center gap-3 bg-white text-center shadow-[0_16px_45px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 hover:shadow-[0_18px_55px_rgba(37,99,235,0.18)] sm:h-32 sm:w-32"
-                style={{ clipPath: "polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0 50%)" }}
+                className={`group flex h-40 w-40 flex-col items-center justify-center gap-4 bg-white text-center shadow-[0_20px_45px_rgba(15,23,42,0.10)] ring-0 transition duration-300 hover:-translate-y-2 hover:shadow-[0_28px_60px_rgba(15,23,42,0.14)] hover:ring-4 sm:h-44 sm:w-44 ${item.ring} ${
+                  index >= 6 ? "lg:-mt-8" : ""
+                } ${index >= 10 ? "lg:col-start-3" : ""}`}
+                style={{ clipPath: "polygon(50% 0%, 96% 25%, 96% 75%, 50% 100%, 4% 75%, 4% 25%)" }}
               >
-                <Icon className="size-9 text-blue-600 transition group-hover:text-blue-800" />
-                <span className="max-w-20 text-xs font-extrabold text-blue-700">{item.title}</span>
+                <span className={`flex size-16 items-center justify-center rounded-2xl ${item.bg}`}>
+                  <Icon className={`size-10 stroke-[2.6] ${item.color}`} />
+                </span>
+                <span className="max-w-28 text-[15px] font-black leading-tight text-[#0b6fae]">
+                  {item.displayTitle ?? item.title}
+                </span>
               </Link>
             );
           })}
@@ -350,7 +353,7 @@ export default function HomePage() {
             ["Elder Care", "elder-care", "/GettyImages-1226346559-1.webp"],
             ["Driver", "driver", "/GettyImages-1456829834.webp"],
             ["Nursing", "nursing", "/GettyImages-1724689200.webp"],
-            ["Japa Maid", "japa-maid", "/GettyImages-1350786822-1.webp"],
+            ["Baby Care & Delivery Service", "baby-care-delivery-service", "/GettyImages-1350786822-1.webp"],
           ].map(([title, slug, image]) => (
             <Link href={`/services/${slug}`} key={title} className="overflow-hidden rounded-lg bg-blue-950 shadow-sm">
               <div className="relative h-40">
@@ -368,7 +371,7 @@ export default function HomePage() {
         <a href="#top" aria-label="Back to top" className="flex size-11 items-center justify-center rounded bg-orange-500 text-white shadow-lg">
           <ArrowUp className="size-5" />
         </a>
-        <a href="https://wa.me/919867074050" aria-label="WhatsApp" className="flex size-12 items-center justify-center rounded-full bg-blue-600 text-white shadow-lg">
+        <a href="https://wa.me/919076354999" aria-label="WhatsApp" className="flex size-12 items-center justify-center rounded-full bg-blue-600 text-white shadow-lg">
           <MessageCircle className="size-6" />
         </a>
       </div>

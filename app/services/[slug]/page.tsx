@@ -322,7 +322,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           <ArrowUp className="size-5" />
         </a>
         <a
-          href="https://wa.me/919867074050"
+          href="https://wa.me/919076354999"
           aria-label="WhatsApp"
           className="flex size-12 items-center justify-center rounded-full bg-blue-600 text-white shadow-lg"
         >

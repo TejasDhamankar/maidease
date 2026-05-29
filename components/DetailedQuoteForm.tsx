@@ -19,9 +19,9 @@ export default function DetailedQuoteForm({ embedded }: DetailedQuoteFormProps) 
   const [error, setError] = useState("");
 
   const services = [
-    "Maid", "Cook", "Baby Sitter", "Baby Massage", 
+    "Maid", "Cook", "Baby Care & Delivery Service",
     "Patient Care", "Elder Care", "Driver", "Nursing", 
-    "Japa Maid", "Delivery boy", "Security Guard", 
+    "Delivery boy", "Security Guard",
     "Housekeeping", "Office Support"
   ];
 

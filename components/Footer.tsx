@@ -5,6 +5,12 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 const quickLinks = ["About Us", "Vision Mission", "Services", "Contact Us", "FAQ", "Our Price"];
 const policyLinks = ["Privacy Policy", "Refund Policy", "Terms & Conditions"];
+const quickLinkHrefs: Record<string, string> = {
+  "About Us": "/about",
+  Services: "/services",
+  "Contact Us": "/contact",
+  "Our Price": "/rate-card",
+};
 
 export default function Footer() {
   return (
@@ -32,7 +38,7 @@ export default function Footer() {
           <div className="h-0.5 w-8 bg-yellow-400" />
           <div className="mt-5 grid gap-3 text-sm font-semibold text-blue-100">
             {quickLinks.map((link) => (
-              <Link key={link} href={link === "Contact Us" ? "/contact" : "#"} className="hover:text-white">
+              <Link key={link} href={quickLinkHrefs[link] ?? "#"} className="hover:text-white">
                 {link}
               </Link>
             ))}
@@ -57,15 +63,19 @@ export default function Footer() {
           <div className="mt-5 grid gap-3 text-sm font-semibold text-blue-100">
             <p className="flex gap-2 leading-6">
               <MapPin className="mt-1 size-4 shrink-0 text-sky-300" />
-              1904, Haware Infotech Park, Opp. Four Points Hotel, Sector 30A, Vashi, Navi Mumbai, Maharashtra 400703.
+              Office No 1007, 10th Floor, The Land Mark, Sector 7, Kharghar-Navi Mumbai, Pin Code - 410210.
             </p>
-            <a href="tel:+919867074050" className="flex items-center gap-2 hover:text-white">
+            <a href="tel:+919076354999" className="flex items-center gap-2 hover:text-white">
               <Phone className="size-4 text-sky-300" />
-              (+91) 9867074050
+              (+91) 9076354999
             </a>
-            <a href="mailto:sales@bbhospitality.in" className="flex items-center gap-2 hover:text-white">
+            <a href="mailto:info@bbhospitality.in" className="flex items-center gap-2 hover:text-white">
               <Mail className="size-4 text-sky-300" />
-              sales@bbhospitality.in
+              info@bbhospitality.in
+            </a>
+            <a href="mailto:operations@bbhospitality.in" className="flex items-center gap-2 hover:text-white">
+              <Mail className="size-4 text-sky-300" />
+              operations@bbhospitality.in
             </a>
           </div>
           <div className="mt-5 flex gap-3">

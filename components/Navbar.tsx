@@ -18,7 +18,7 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "Services +", href: "/services" },
   { name: "About Us", href: "/about" },
-  { name: "Our Price", href: "/#services" },
+  { name: "Our Price", href: "/rate-card" },
   { name: "Why Choose Us", href: "/#why-choose-us" },
   { name: "Contact", href: "/contact" },
 ];
@@ -44,13 +44,13 @@ export default function Navbar() {
       <div className="hidden border-b border-slate-100 text-xs font-semibold text-slate-700 lg:block">
         <div className="mx-auto flex h-8 max-w-6xl items-center justify-between px-4">
           <div className="flex items-center gap-5">
-            <a href="tel:+919867074050" className="flex items-center gap-1.5 hover:text-blue-700">
+            <a href="tel:+919076354999" className="flex items-center gap-1.5 hover:text-blue-700">
               <Phone className="size-3.5 text-blue-600" />
-              Call: (+91) 9867074050 | 9891122200
+              Call: (+91) 9076354999
             </a>
-            <a href="mailto:sales@bbhospitality.in" className="flex items-center gap-1.5 hover:text-blue-700">
+            <a href="mailto:info@bbhospitality.in" className="flex items-center gap-1.5 hover:text-blue-700">
               <Mail className="size-3.5 text-blue-600" />
-              Mail us: sales@bbhospitality.in
+              Mail us: info@bbhospitality.in
             </a>
             <div className="flex items-center gap-2 text-[11px] text-slate-900">
               <span aria-label="Facebook">f</span>
@@ -178,9 +178,9 @@ export default function Navbar() {
             )}
           </div>
           <div className="grid gap-3 border-t border-slate-100 pt-4 text-sm font-semibold text-slate-700">
-            <a href="tel:+919867074050" className="flex items-center gap-2">
+            <a href="tel:+919076354999" className="flex items-center gap-2">
               <Phone className="size-4 text-blue-600" />
-              (+91) 9867074050
+              (+91) 9076354999
             </a>
             <Button asChild className="h-11 rounded bg-gradient-to-r from-blue-600 to-blue-700 font-bold text-white hover:from-blue-700 hover:to-blue-800">
               <Link href="/#booking" onClick={() => setIsMobileMenuOpen(false)}>

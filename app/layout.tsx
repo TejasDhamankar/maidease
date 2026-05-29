@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "BB HOSPITALITY | Premium Maid & Hospitality Services",
   description:
-    "Book verified maids, cooks, babysitters, patient care, housekeeping, drivers, security guards, and hospitality staff with BB HOSPITALITY.",
+    "Book verified maids, cooks, baby care and delivery support, patient care, housekeeping, drivers, security guards, and hospitality staff with BB HOSPITALITY.",
 };
 
 export default function RootLayout({

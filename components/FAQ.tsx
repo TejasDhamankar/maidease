@@ -54,7 +54,7 @@ export default function FAQ() {
                   <Phone className="w-4 h-4 text-gray-900" />
                 </div>
                 <span className="text-sm font-semibold text-gray-900 whitespace-nowrap">
-                  +91 9867074050
+                  +91 9076354999
                 </span>
               </div>
             </div>
