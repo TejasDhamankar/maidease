@@ -313,7 +313,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
       <Footer />
 
-      <div className="fixed bottom-5 right-5 z-40 grid gap-3">
+      <div className="fixed bottom-20 right-5 z-40 grid gap-3 md:bottom-5">
         <a
           href="#top"
           aria-label="Back to top"
@@ -329,12 +329,6 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           <MessageCircle className="size-6" />
         </a>
       </div>
-      <Link
-        href="/#booking"
-        className="fixed bottom-0 left-0 z-40 rounded-tr-md bg-orange-500 px-4 py-2 text-xs font-extrabold text-white shadow-lg"
-      >
-        Post Your Requirement
-      </Link>
     </main>
   );
 }

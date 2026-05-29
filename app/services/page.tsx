@@ -45,12 +45,12 @@ export default function ServicesPage() {
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {serviceCategories.map((service) => (
             <Link
               key={service.slug}
               href={`/services/${service.slug}`}
-              className="group overflow-hidden rounded-xl border border-slate-100 bg-white shadow-[0_8px_28px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(37,99,235,0.16)]"
+              className="group flex h-full flex-col overflow-hidden rounded-xl border border-slate-100 bg-white shadow-[0_8px_28px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 hover:border-orange-200 hover:shadow-[0_18px_45px_rgba(18,52,91,0.16)]"
             >
               <div className="relative h-52 overflow-hidden">
                 <Image
@@ -60,14 +60,14 @@ export default function ServicesPage() {
                   className="object-cover transition duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="mb-3 text-2xl font-extrabold text-blue-950">
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="mb-3 text-2xl font-extrabold leading-tight text-[#12345b]">
                   {service.title}
                 </h3>
-                <p className="mb-5 text-sm font-medium leading-7 text-slate-600">
+                <p className="mb-5 flex-1 text-sm font-medium leading-7 text-slate-600">
                   {service.summary}
                 </p>
-                <span className="inline-flex h-10 items-center rounded bg-gradient-to-r from-blue-600 to-blue-700 px-5 text-sm font-extrabold text-white">
+                <span className="mt-auto inline-flex h-10 w-fit items-center rounded bg-gradient-to-r from-orange-500 to-orange-600 px-5 text-sm font-extrabold text-white">
                   View Details
                 </span>
               </div>
@@ -78,7 +78,7 @@ export default function ServicesPage() {
 
       <Footer />
 
-      <div className="fixed bottom-5 right-5 z-40 grid gap-3">
+      <div className="fixed bottom-20 right-5 z-40 grid gap-3 md:bottom-5">
         <a
           href="#top"
           aria-label="Back to top"
@@ -94,12 +94,6 @@ export default function ServicesPage() {
           <MessageCircle className="size-6" />
         </a>
       </div>
-      <Link
-        href="/#booking"
-        className="fixed bottom-0 left-0 z-40 rounded-tr-md bg-orange-500 px-4 py-2 text-xs font-extrabold text-white shadow-lg"
-      >
-        Post Your Requirement
-      </Link>
     </main>
   );
 }

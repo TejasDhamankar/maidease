@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { ClipboardList, LayoutGrid, Mail, MapPin, Phone } from "lucide-react";
 
 const quickLinks = ["About Us", "Vision Mission", "Services", "Contact Us", "FAQ", "Our Price"];
 const policyLinks = ["Privacy Policy", "Refund Policy", "Terms & Conditions"];
@@ -12,6 +12,11 @@ const quickLinkHrefs: Record<string, string> = {
   "Contact Us": "/contact",
   "Our Price": "/rate-card",
 };
+const mobileNavLinks = [
+  { label: "Post Your Requirement", href: "/#booking", Icon: ClipboardList },
+  { label: "Services", href: "/services", Icon: LayoutGrid },
+  { label: "Contact", href: "/contact", Icon: Phone },
+];
 
 export default function Footer() {
   return (
@@ -24,7 +29,7 @@ export default function Footer() {
               alt="BB HOSPITALITY"
               width={1787}
               height={293}
-              className="h-12 w-auto max-w-64 object-contain"
+              className="h-10 w-auto max-w-56 object-contain"
             />
           </div>
           <p className="text-sm leading-6 text-blue-100">
@@ -84,7 +89,7 @@ export default function Footer() {
           </div>
           <div className="mt-5 flex gap-3">
             {["f", "x", "in"].map((label) => (
-              <a key={label} href="#" className="flex size-8 items-center justify-center rounded-full bg-white/10 text-xs font-extrabold text-white transition hover:bg-blue-600">
+              <a key={label} href="#" className="flex size-8 items-center justify-center rounded-full bg-white/10 text-xs font-extrabold text-white transition hover:bg-orange-500">
                 {label}
               </a>
             ))}
@@ -96,15 +101,11 @@ export default function Footer() {
         2026 All rights reserved by BB HOSPITALITY.
       </div>
 
-      <nav className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-4 border-t border-slate-200 bg-white text-[11px] font-bold text-blue-950 shadow-[0_-8px_30px_rgba(15,23,42,0.12)] md:hidden">
-        {[
-          ["Home", "/"],
-          ["About", "/about"],
-          ["Services", "/services"],
-          ["Contact", "/contact"],
-        ].map(([label, href]) => (
-          <Link key={label} href={href} className="py-3 text-center hover:bg-blue-50">
-            {label}
+      <nav className="fixed inset-x-0 bottom-0 z-30 grid h-16 grid-cols-3 border-t border-slate-200 bg-white text-[11px] font-extrabold text-[#12345b] shadow-[0_-8px_30px_rgba(15,23,42,0.12)] md:hidden">
+        {mobileNavLinks.map(({ label, href, Icon }) => (
+          <Link key={label} href={href} className="flex min-w-0 flex-col items-center justify-center gap-1 px-2 text-center leading-tight hover:bg-orange-50">
+            <Icon className="size-4 shrink-0 text-orange-500" />
+            <span className="w-full truncate">{label}</span>
           </Link>
         ))}
       </nav>

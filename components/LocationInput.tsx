@@ -92,7 +92,7 @@ export default function LocationInput({
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}
         list={listId}
-        className={className ?? "h-11 w-full rounded-lg border border-slate-200 bg-white pl-11 pr-4 text-sm font-semibold outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"}
+        className={className ?? "h-11 w-full rounded-lg border border-slate-200 bg-white pl-11 pr-4 text-sm font-semibold text-[#12345b] outline-none transition placeholder:text-slate-500 focus:border-orange-500 focus:ring-4 focus:ring-orange-100"}
       />
       <datalist id={listId}>
         {locationSuggestions.map((location) => (
