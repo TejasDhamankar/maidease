@@ -96,7 +96,7 @@ export default function ServicesPage() {
       </div>
       <Link
         href="/#booking"
-        className="fixed bottom-0 left-0 z-40 rounded-tr-md bg-rose-600 px-4 py-2 text-xs font-extrabold text-white shadow-lg"
+        className="fixed bottom-0 left-0 z-40 rounded-tr-md bg-orange-500 px-4 py-2 text-xs font-extrabold text-white shadow-lg"
       >
         Post Your Requirement
       </Link>

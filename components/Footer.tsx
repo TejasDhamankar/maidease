@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 
@@ -17,11 +18,14 @@ export default function Footer() {
     <footer className="bg-blue-950 text-white">
       <div className="mx-auto grid max-w-5xl gap-10 px-4 py-12 md:grid-cols-[1.2fr_1fr_1fr_1.5fr]">
         <div>
-          <div className="mb-4 inline-flex items-center gap-2 rounded-lg bg-white px-4 py-3 text-blue-950 shadow-lg">
-            <span className="flex size-9 items-center justify-center rounded-lg bg-blue-600 text-sm font-extrabold text-white">
-              BB
-            </span>
-            <span className="font-extrabold">BB HOSPITALITY</span>
+          <div className="mb-4 inline-flex rounded-lg bg-white px-4 py-3 shadow-lg">
+            <Image
+              src="/logo_website-.png"
+              alt="BB HOSPITALITY"
+              width={1787}
+              height={293}
+              className="h-12 w-auto max-w-64 object-contain"
+            />
           </div>
           <p className="text-sm leading-6 text-blue-100">
             Premium maid, care, housekeeping, and hospitality staffing support for modern families and businesses.
@@ -63,7 +67,7 @@ export default function Footer() {
           <div className="mt-5 grid gap-3 text-sm font-semibold text-blue-100">
             <p className="flex gap-2 leading-6">
               <MapPin className="mt-1 size-4 shrink-0 text-sky-300" />
-              Office No 1007, 10th Floor, The Land Mark, Sector 7, Kharghar-Navi Mumbai, Pin Code - 410210.
+              Office No. 1007, 10th Floor, The Landmark, Sector 7, Kharghar, Navi Mumbai, Pin Code - 410210.
             </p>
             <a href="tel:+919076354999" className="flex items-center gap-2 hover:text-white">
               <Phone className="size-4 text-sky-300" />

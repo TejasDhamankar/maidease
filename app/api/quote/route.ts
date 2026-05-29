@@ -4,9 +4,9 @@ import Quote from "@/models/Quote";
 
 export async function POST(req: Request) {
   const body = await req.json();
-  const { name, email, phone, service, urgency } = body;
+  const { name, email, phone, location, service, urgency } = body;
 
-  if (!name || !email || !phone || !service || !urgency) {
+  if (!name || !phone || !location || !service || !urgency) {
     return NextResponse.json(
       { error: "Required fields are missing" },
       { status: 400 }
@@ -20,6 +20,7 @@ export async function POST(req: Request) {
       name,
       email,
       phone,
+      location,
       service,
       urgency,
     });

@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import EntryChoiceModal from "@/components/EntryChoiceModal";
 import Navbar from "@/components/Navbar";
 
 export default function ClientChrome({
@@ -15,6 +16,7 @@ export default function ClientChrome({
   return (
     <TooltipProvider>
       {!isAdminPage && <Navbar />}
+      {!isAdminPage && <EntryChoiceModal />}
       {children}
     </TooltipProvider>
   );

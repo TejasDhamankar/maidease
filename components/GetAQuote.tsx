@@ -4,29 +4,24 @@ import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2, ChevronDown, Check } from "lucide-react";
+import LocationInput from "@/components/LocationInput";
+import { inquiryServices } from "@/lib/inquiry";
 
 export default function GetAQuote() {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [location, setLocation] = useState("");
   const [selectedService, setSelectedService] = useState("");
   const [urgency, setUrgency] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
-  const services = [
-    "Maid", "Cook", "Baby Care & Delivery Service",
-    "Patient Care", "Elder Care", "Driver", "Nursing", 
-    "Delivery boy", "Security Guard",
-    "Housekeeping", "Office Support"
-  ];
-
   const urgencyOptions = ["Urgent Need", "Needed Later", "I'm Just Planning"];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name || !email || !phone || !selectedService || !urgency) {
+    if (!name || !phone || !location || !selectedService || !urgency) {
       setError("Please fill in all required fields.");
       return;
     }
@@ -41,8 +36,8 @@ export default function GetAQuote() {
         },
         body: JSON.stringify({
           name,
-          email,
           phone,
+          location,
           service: selectedService,
           urgency,
         }),
@@ -97,8 +92,8 @@ export default function GetAQuote() {
                   onClick={() => {
                     setSuccess(false);
                     setName("");
-                    setEmail("");
                     setPhone("");
+                    setLocation("");
                     setSelectedService("");
                     setUrgency("");
                     }}
@@ -119,22 +114,20 @@ export default function GetAQuote() {
                     className="w-full px-5 py-3.5 rounded-xl border-none outline-none focus:ring-2 focus:ring-blue-600/50 shadow-sm text-sm placeholder:text-gray-600 bg-white/70" 
                   />
                   <input 
-                    type="email" 
-                    placeholder="Email Address" 
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    className="w-full px-5 py-3.5 rounded-xl border-none outline-none focus:ring-2 focus:ring-blue-600/50 shadow-sm text-sm placeholder:text-gray-600 bg-white/70" 
-                  />
-                  <input 
                     type="tel" 
-                    placeholder="Phone" 
+                    placeholder="Phone Number" 
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     required
                     className="w-full px-5 py-3.5 rounded-xl border-none outline-none focus:ring-2 focus:ring-blue-600/50 shadow-sm text-sm placeholder:text-gray-600 bg-white/70" 
                   />
                 </div>
+
+                <LocationInput
+                  value={location}
+                  onChange={setLocation}
+                  className="w-full rounded-xl border-none bg-white/70 px-11 py-3.5 text-sm shadow-sm outline-none placeholder:text-gray-600 focus:ring-2 focus:ring-orange-500/50"
+                />
 
                 {/* Service Selection */}
                 <div className="relative">
@@ -145,7 +138,7 @@ export default function GetAQuote() {
                     className="w-full px-5 py-3.5 rounded-xl border-none outline-none focus:ring-2 focus:ring-blue-600/50 shadow-sm text-sm text-gray-600 appearance-none bg-white/70 cursor-pointer"
                   >
                     <option value="" disabled>What do you want your maid to do?</option>
-                    {services.map(s => <option key={s} value={s}>{s}</option>)}
+                    {inquiryServices.map(s => <option key={s} value={s}>{s}</option>)}
                   </select>
                   <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
                 </div>

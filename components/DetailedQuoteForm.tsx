@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
+import LocationInput from "@/components/LocationInput";
+import { inquiryServices } from "@/lib/inquiry";
 
 type DetailedQuoteFormProps = {
   embedded?: boolean;
@@ -10,26 +12,19 @@ type DetailedQuoteFormProps = {
 
 export default function DetailedQuoteForm({ embedded }: DetailedQuoteFormProps) {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [location, setLocation] = useState("");
   const [service, setService] = useState("");
   const [urgency, setUrgency] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
-  const services = [
-    "Maid", "Cook", "Baby Care & Delivery Service",
-    "Patient Care", "Elder Care", "Driver", "Nursing", 
-    "Delivery boy", "Security Guard",
-    "Housekeeping", "Office Support"
-  ];
-
   const urgencyOptions = ["Urgent Need", "Needed Later", "I'm Just Planning"];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name || !email || !phone || !service || !urgency) {
+    if (!name || !phone || !location || !service || !urgency) {
       setError("Please fill in all fields.");
       return;
     }
@@ -43,7 +38,7 @@ export default function DetailedQuoteForm({ embedded }: DetailedQuoteFormProps) 
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, email, phone, service, urgency }),
+        body: JSON.stringify({ name, phone, location, service, urgency }),
       });
 
       if (!response.ok) {
@@ -83,7 +78,7 @@ export default function DetailedQuoteForm({ embedded }: DetailedQuoteFormProps) 
           <h3 className="text-lg font-bold">Request Submitted!</h3>
           <p className="text-sm">Thank you for your request. We will get back to you shortly.</p>
           <button 
-            onClick={() => { setSuccess(false); setName(""); setEmail(""); setPhone(""); setService(""); setUrgency(""); }}
+            onClick={() => { setSuccess(false); setName(""); setPhone(""); setLocation(""); setService(""); setUrgency(""); }}
             className="text-[#007bff] hover:underline text-sm font-medium"
           >
             Submit another request
@@ -103,25 +98,23 @@ export default function DetailedQuoteForm({ embedded }: DetailedQuoteFormProps) 
               />
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-medium text-gray-700">Email</label>
+              <label className="text-sm font-medium text-gray-700">Phone Number</label>
               <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email Address"
+                type="tel"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="Phone Number"
                 className="w-full px-4 py-3 rounded-xl border border-gray-200 outline-none focus:ring-2 focus:ring-blue-600 transition-all"
               />
             </div>
           </div>
           
           <div className="space-y-2">
-            <label className="text-sm font-medium text-gray-700">Phone</label>
-            <input
-              type="tel"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              placeholder="Phone Number"
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 outline-none focus:ring-2 focus:ring-blue-600 transition-all"
+            <label className="text-sm font-medium text-gray-700">Location</label>
+            <LocationInput
+              value={location}
+              onChange={setLocation}
+              className="w-full rounded-xl border border-gray-200 px-11 py-3 outline-none transition-all focus:ring-2 focus:ring-orange-500"
             />
           </div>
 
@@ -135,7 +128,7 @@ export default function DetailedQuoteForm({ embedded }: DetailedQuoteFormProps) 
                 className="w-full px-5 py-3 rounded-xl border border-gray-200 bg-white appearance-none focus:ring-2 focus:ring-blue-600 outline-none transition-all"
               >
                 <option value="" disabled>Select a service</option>
-                {services.map((s) => (
+                {inquiryServices.map((s) => (
                   <option key={s} value={s}>{s}</option>
                 ))}
               </select>

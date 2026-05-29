@@ -15,7 +15,6 @@ import {
   ClipboardCheck,
   Home,
   MessageCircle,
-  Play,
   Search,
   ShieldCheck,
   Sparkles,
@@ -25,11 +24,13 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
+import LocationInput from "@/components/LocationInput";
+import { inquiryServices } from "@/lib/inquiry";
 
 const services = [
   { title: "Maid", slug: "maid", icon: Sparkles, color: "text-lime-600", bg: "bg-lime-100", ring: "group-hover:ring-lime-200" },
   { title: "Cook", slug: "cook", icon: ChefHat, color: "text-amber-500", bg: "bg-amber-100", ring: "group-hover:ring-amber-200" },
-  { title: "Baby Care & Delivery Service", displayTitle: "Baby Care", slug: "baby-care-delivery-service", icon: Baby, color: "text-rose-500", bg: "bg-rose-100", ring: "group-hover:ring-rose-200" },
+  { title: "Baby Care & Delivery Service", displayTitle: "Baby Care", slug: "baby-care-delivery-service", icon: Baby, color: "text-orange-500", bg: "bg-orange-100", ring: "group-hover:ring-orange-200" },
   { title: "Patient Care", slug: "patient-care", icon: Ambulance, color: "text-sky-600", bg: "bg-sky-100", ring: "group-hover:ring-sky-200" },
   { title: "Elder Care", slug: "elder-care", icon: UserRoundCheck, color: "text-emerald-600", bg: "bg-emerald-100", ring: "group-hover:ring-emerald-200" },
   { title: "Driver", slug: "driver", icon: Car, color: "text-indigo-600", bg: "bg-indigo-100", ring: "group-hover:ring-indigo-200" },
@@ -100,9 +101,48 @@ const locations = [
 function BookingCard() {
   const [service, setService] = useState("Maid");
   const [urgency, setUrgency] = useState("Urgent Need");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [location, setLocation] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!name || !phone || !location || !service || !urgency) {
+      setError("Please fill name, phone number, location, service, and urgency.");
+      return;
+    }
+
+    setError("");
+    setSuccess("");
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone, location, service, urgency }),
+      });
+
+      if (!response.ok) throw new Error("Failed to submit inquiry");
+
+      setSuccess("Requirement submitted. Our team will contact you shortly.");
+      setName("");
+      setPhone("");
+      setLocation("");
+      setService("Maid");
+      setUrgency("Urgent Need");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <form id="booking" className="rounded-lg border border-slate-200 bg-white p-5 shadow-[0_18px_50px_rgba(15,23,42,0.16)] md:p-6">
+    <form id="booking" onSubmit={handleSubmit} className="rounded-lg border border-slate-200 bg-white p-5 shadow-[0_18px_50px_rgba(15,23,42,0.16)] md:p-6">
       <h2 className="mb-5 text-center text-base font-extrabold text-blue-950">
         What Do You Want Your Staff To Do?
       </h2>
@@ -114,8 +154,8 @@ function BookingCard() {
         onChange={(event) => setService(event.target.value)}
         className="mb-4 h-12 w-full rounded-lg border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-800 outline-none transition focus:border-blue-600 focus:ring-4 focus:ring-blue-100"
       >
-        {services.map((item) => (
-          <option key={item.title}>{item.title}</option>
+        {inquiryServices.map((item) => (
+          <option key={item}>{item}</option>
         ))}
       </select>
 
@@ -143,11 +183,28 @@ function BookingCard() {
       </div>
 
       <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
-        <input className="h-11 rounded-lg border border-slate-200 px-4 text-sm outline-none focus:border-blue-600" placeholder="Name" />
-        <input className="h-11 rounded-lg border border-slate-200 px-4 text-sm outline-none focus:border-blue-600" placeholder="Phone" />
+        <input
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+          className="h-11 rounded-lg border border-slate-200 px-4 text-sm outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+          placeholder="Name"
+        />
+        <input
+          value={phone}
+          onChange={(event) => setPhone(event.target.value)}
+          className="h-11 rounded-lg border border-slate-200 px-4 text-sm outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+          placeholder="Phone Number"
+        />
       </div>
-      <Button className="mx-auto mt-5 flex h-10 rounded bg-gradient-to-r from-blue-600 to-blue-700 px-8 font-bold text-white shadow-lg shadow-blue-600/20 hover:from-blue-700 hover:to-blue-800">
-        Next
+      <div className="mt-3">
+        <LocationInput value={location} onChange={setLocation} />
+      </div>
+
+      {error ? <p className="mt-3 rounded-lg bg-red-50 p-3 text-center text-xs font-bold text-red-600">{error}</p> : null}
+      {success ? <p className="mt-3 rounded-lg bg-blue-50 p-3 text-center text-xs font-bold text-blue-700">{success}</p> : null}
+
+      <Button disabled={loading} className="mx-auto mt-5 flex h-10 rounded bg-gradient-to-r from-orange-500 to-orange-600 px-8 font-bold text-white shadow-lg shadow-orange-500/20 hover:from-orange-600 hover:to-orange-700">
+        {loading ? "Submitting..." : "Next"}
       </Button>
     </form>
   );
@@ -156,7 +213,7 @@ function BookingCard() {
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-white pt-24 text-slate-900 lg:pt-[96px]">
-      <section className="bg-gradient-to-b from-sky-400 to-sky-50 px-4 py-10 md:py-12">
+      <section className="bg-gradient-to-b from-[#12345b] via-sky-500 to-sky-50 px-4 py-10 md:py-12">
         <div className="mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-[1fr_1.08fr]">
           <div className="text-center md:pr-6">
             <h1 className="mb-5 text-3xl font-extrabold text-white underline decoration-white/80 underline-offset-4 md:text-4xl">
@@ -225,13 +282,16 @@ export default function HomePage() {
       </section>
 
       <section className="px-4 pb-20 pt-8 md:pb-28">
-        <div className="relative mx-auto grid max-w-5xl items-center overflow-visible rounded-lg bg-gradient-to-r from-blue-950 via-blue-800 to-blue-600 p-8 text-white shadow-xl md:min-h-[300px] md:grid-cols-[1fr_360px] md:p-12">
+        <div className="relative mx-auto grid max-w-5xl items-center overflow-hidden rounded-lg bg-gradient-to-r from-blue-950 via-[#12345b] to-orange-500 p-8 text-white shadow-xl md:min-h-[300px] md:grid-cols-[1fr_360px] md:p-12">
           <div className="relative z-10">
-            <h2 className="mb-4 text-2xl font-extrabold">Now Available On</h2>
-            <div className="flex flex-wrap gap-3">
-              <span className="inline-flex h-11 items-center gap-2 rounded-md bg-white px-4 font-bold text-slate-900"><Play className="size-5 text-blue-600" /> Google Play</span>
-              <span className="inline-flex h-11 items-center gap-2 rounded-md bg-white px-4 font-bold text-slate-900">App Store</span>
-            </div>
+            <p className="mb-3 text-xs font-extrabold uppercase tracking-[0.28em] text-orange-200">Verified Staffing</p>
+            <h2 className="mb-4 text-3xl font-extrabold">Professional support for every home and workplace</h2>
+            <p className="max-w-xl text-sm font-semibold leading-7 text-blue-50">
+              Tell us your requirement and we will help you choose reliable staff for the right timing, location, and budget.
+            </p>
+            <Button asChild className="mt-6 h-11 rounded bg-white px-6 font-extrabold text-blue-950 hover:bg-orange-50">
+              <Link href="#booking">Post Your Requirement</Link>
+            </Button>
           </div>
           <div className="relative z-10 mx-auto mt-8 h-80 w-64 md:absolute md:bottom-[-34px] md:right-14 md:mt-0 md:h-[360px] md:w-[280px]">
             <Image src="/Get_a_Quote.png" alt="BB HOSPITALITY mobile app" fill className="rounded-[2rem] object-cover object-center shadow-2xl ring-4 ring-white/15" />
@@ -240,7 +300,7 @@ export default function HomePage() {
       </section>
 
       <section className="px-4 py-14">
-        <h2 className="mb-12 text-center text-3xl font-extrabold text-rose-500">How It Work?</h2>
+        <h2 className="mb-12 text-center text-3xl font-extrabold text-orange-500">How It Work?</h2>
         <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
           {[
             ["Search", Search, "Use our simple search and tell us what you require in your area."],
@@ -255,7 +315,7 @@ export default function HomePage() {
                 {index + 1}
               </span>
               <h3 className="mb-3 text-xl font-extrabold text-blue-950">{title as string}</h3>
-              <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-rose-500" />
+              <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-orange-500" />
               <p className="mx-auto max-w-xs text-sm leading-6 text-slate-600">{text as string}</p>
             </div>
           ))}
@@ -281,7 +341,7 @@ export default function HomePage() {
 
       <section className="bg-[#fffaf7] px-4 py-16">
         <div className="text-center">
-          <p className="mb-2 text-sm font-bold text-rose-500">Work Process</p>
+          <p className="mb-2 text-sm font-bold text-orange-500">Work Process</p>
           <h2 className="text-3xl font-extrabold text-blue-950">We&apos;re Big On Trust & Safety</h2>
         </div>
         <div className="mx-auto mt-10 max-w-5xl">
@@ -337,12 +397,12 @@ export default function HomePage() {
               ))}
             </div>
             <div className="grid gap-x-8 gap-y-4 text-xs font-bold text-blue-700 sm:grid-cols-2 lg:grid-cols-3">
-              {locations.map((item) => <Link href="/services/maid" key={item} className="hover:text-rose-600">{item}</Link>)}
+              {locations.map((item) => <Link href="/services/maid" key={item} className="hover:text-orange-600">{item}</Link>)}
             </div>
           </div>
         </div>
         <div className="mt-6 text-center">
-          <Button className="h-9 rounded bg-rose-600 px-8 text-xs font-bold text-white hover:bg-rose-700">View all location</Button>
+          <Button className="h-9 rounded bg-orange-500 px-8 text-xs font-bold text-white hover:bg-orange-600">View all location</Button>
         </div>
       </section>
 
@@ -375,7 +435,7 @@ export default function HomePage() {
           <MessageCircle className="size-6" />
         </a>
       </div>
-      <a href="#booking" className="fixed bottom-0 left-0 z-40 rounded-tr-md bg-rose-600 px-4 py-2 text-xs font-extrabold text-white shadow-lg">
+      <a href="#booking" className="fixed bottom-0 left-0 z-40 rounded-tr-md bg-orange-500 px-4 py-2 text-xs font-extrabold text-white shadow-lg">
         Post Your Requirement
       </a>
     </main>

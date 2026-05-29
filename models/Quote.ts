@@ -1,8 +1,9 @@
 import mongoose, { Document, Model, Schema } from "mongoose";
 export interface IQuote extends Document {
   name: string;
-  email: string;
+  email?: string;
   phone: string;
+  location: string;
   service: string;
   urgency: string;
 }
@@ -15,11 +16,14 @@ const QuoteSchema: Schema = new Schema(
     },
     email: {
       type: String,
-      required: [true, "Please provide an email"],
     },
     phone: {
       type: String,
       required: [true, "Please provide a phone number"],
+    },
+    location: {
+      type: String,
+      required: [true, "Please provide a location"],
     },
     service: {
       type: String,

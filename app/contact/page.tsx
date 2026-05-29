@@ -17,7 +17,7 @@ const contactCards = [
   },
   {
     title: "Our Location",
-    value: "Office No 1007, 10th Floor, The Land Mark, Sector 7, Kharghar-Navi Mumbai\nPin Code - 410210\nContact No: 9076354999\nEmail ID: info@bbhospitality.in",
+    value: "Office No. 1007, 10th Floor,\nThe Landmark,\nSector 7,\nKharghar, Navi Mumbai,\nPin Code - 410210\nContact No: 9076354999\nEmail ID: info@bbhospitality.in",
     icon: MapPin,
   },
   {

@@ -265,7 +265,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                   <Link
                     href={`/services/${service.slug}`}
                     key={item}
-                    className="hover:text-rose-600"
+                    className="hover:text-orange-600"
                   >
                     {item}
                   </Link>
@@ -276,7 +276,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           <div className="mt-6 text-center">
             <Link
               href="/services"
-              className="inline-flex h-10 items-center rounded bg-rose-600 px-8 text-xs font-extrabold text-white shadow-lg shadow-rose-600/20 transition hover:bg-rose-700"
+              className="inline-flex h-10 items-center rounded bg-orange-500 px-8 text-xs font-extrabold text-white shadow-lg shadow-orange-500/20 transition hover:bg-orange-600"
             >
               View all location
             </Link>
@@ -331,7 +331,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
       </div>
       <Link
         href="/#booking"
-        className="fixed bottom-0 left-0 z-40 rounded-tr-md bg-rose-600 px-4 py-2 text-xs font-extrabold text-white shadow-lg"
+        className="fixed bottom-0 left-0 z-40 rounded-tr-md bg-orange-500 px-4 py-2 text-xs font-extrabold text-white shadow-lg"
       >
         Post Your Requirement
       </Link>

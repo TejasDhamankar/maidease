@@ -66,7 +66,7 @@ const rateSections: RateSection[] = [
     title: "Baby Care & Delivery",
     description: "Japa maid, baby-care, massage, and post-delivery family support.",
     Icon: Baby,
-    accent: "bg-rose-100 text-rose-700",
+    accent: "bg-orange-100 text-orange-700",
     rows: [
       { service: "Day Shift Japa Maid", details: "12 HRS, 1-6 Months", charge: "Rs. 25,000" },
       { service: "Night Shift Japa Maid", details: "12 HRS, 1-6 Months", charge: "Rs. 30,000" },
@@ -262,7 +262,7 @@ export default function RateCardPage() {
                         </div>
                         <div className="flex items-end justify-between gap-3 border-t border-slate-100 pt-4">
                           <span className="text-xs font-extrabold uppercase tracking-wide text-slate-400">Charge</span>
-                          <span className="text-right text-xl font-extrabold text-rose-600">{row.charge}</span>
+                          <span className="text-right text-xl font-extrabold text-orange-600">{row.charge}</span>
                         </div>
                       </div>
                     </div>
@@ -297,7 +297,7 @@ export default function RateCardPage() {
             </a>
             <a
               href="/contact"
-              className="inline-flex h-11 items-center gap-2 rounded bg-rose-600 px-5 text-sm font-extrabold text-white transition hover:bg-rose-700"
+              className="inline-flex h-11 items-center gap-2 rounded bg-orange-500 px-5 text-sm font-extrabold text-white transition hover:bg-orange-600"
             >
               Contact Us
             </a>

@@ -1,14 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
-  Apple,
   ChevronDown,
   Mail,
   Menu,
   Phone,
-  Play,
   X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -42,7 +41,7 @@ export default function Navbar() {
       }`}
     >
       <div className="hidden border-b border-slate-100 text-xs font-semibold text-slate-700 lg:block">
-        <div className="mx-auto flex h-8 max-w-6xl items-center justify-between px-4">
+        <div className="mx-auto flex h-8 max-w-7xl items-center justify-between px-4">
           <div className="flex items-center gap-5">
             <a href="tel:+919076354999" className="flex items-center gap-1.5 hover:text-blue-700">
               <Phone className="size-3.5 text-blue-600" />
@@ -58,26 +57,22 @@ export default function Navbar() {
               <span aria-label="Instagram">in</span>
             </div>
           </div>
-          {/* Removed Google Play and App Store buttons */}
         </div>
       </div>
 
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2" aria-label="BB HOSPITALITY home">
-          <span className="flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 text-base font-extrabold text-white shadow-lg shadow-blue-600/20">
-            BB
-          </span>
-          <span className="leading-none">
-            <span className="block text-[10px] font-extrabold uppercase tracking-[0.22em] text-rose-500">
-              Premium Care
-            </span>
-            <span className="block text-xl font-extrabold tracking-tight text-blue-950">
-              BB HOSPITALITY
-            </span>
-          </span>
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-5 px-4">
+        <Link href="/" className="flex shrink-0 items-center" aria-label="BB HOSPITALITY home">
+          <Image
+            src="/logo_website-.png"
+            alt="BB HOSPITALITY"
+            width={1787}
+            height={293}
+            priority
+            className="h-10 w-auto object-contain sm:h-12 lg:h-14"
+          />
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-5 md:flex lg:gap-7">
           {navLinks.map((link) => (
             link.name.startsWith("Services") ? (
               <div
@@ -123,7 +118,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <Button asChild className="hidden h-10 rounded bg-rose-600 px-5 font-bold text-white shadow-lg shadow-rose-600/20 hover:bg-rose-700 md:inline-flex">
+        <Button asChild className="hidden h-10 rounded bg-orange-500 px-5 font-bold text-white shadow-lg shadow-orange-500/20 hover:bg-orange-600 md:inline-flex">
           <Link href="/#booking">I Am Looking For Staff</Link>
         </Button>
 
