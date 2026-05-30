@@ -26,12 +26,22 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [showMarathiJobText, setShowMarathiJobText] = useState(false);
+  const jobCtaText = showMarathiJobText ? "मुझे नौकरी चाहिए" : "I Am Looking For A Job";
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setShowMarathiJobText((current) => !current);
+    }, 3000);
+
+    return () => window.clearInterval(interval);
   }, []);
 
   return (
@@ -118,8 +128,8 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <Button asChild className="hidden h-10 rounded bg-orange-500 px-5 font-bold text-white shadow-lg shadow-orange-500/20 hover:bg-orange-600 md:inline-flex">
-          <Link href="/#booking">I Am Looking For Staff</Link>
+        <Button asChild className="hidden h-10 min-w-[210px] rounded bg-orange-500 px-5 font-bold text-white shadow-lg shadow-orange-500/20 hover:bg-orange-600 md:inline-flex">
+          <Link href="/apply-job" aria-live="polite">{jobCtaText}</Link>
         </Button>
 
         <button
@@ -178,8 +188,8 @@ export default function Navbar() {
               (+91) 9076354999
             </a>
             <Button asChild className="h-11 rounded bg-gradient-to-r from-orange-500 to-orange-600 font-bold text-white hover:from-orange-600 hover:to-orange-700">
-              <Link href="/#booking" onClick={() => setIsMobileMenuOpen(false)}>
-                Post Your Requirement
+              <Link href="/apply-job" onClick={() => setIsMobileMenuOpen(false)} aria-live="polite">
+                {jobCtaText}
               </Link>
             </Button>
           </div>

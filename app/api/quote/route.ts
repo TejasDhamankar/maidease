@@ -4,7 +4,7 @@ import Quote from "@/models/Quote";
 
 export async function POST(req: Request) {
   const body = await req.json();
-  const { name, email, phone, location, service, urgency } = body;
+  const { name, email, phone, location, service, urgency, genderPreference, hours, message } = body;
 
   if (!name || !phone || !location || !service || !urgency) {
     return NextResponse.json(
@@ -23,6 +23,9 @@ export async function POST(req: Request) {
       location,
       service,
       urgency,
+      genderPreference,
+      hours,
+      message,
     });
     return NextResponse.json(
       { message: "Quote submitted successfully", quote: newQuote },

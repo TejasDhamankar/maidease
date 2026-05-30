@@ -6,6 +6,9 @@ export interface IQuote extends Document {
   location: string;
   service: string;
   urgency: string;
+  genderPreference?: string;
+  hours?: string;
+  message?: string;
 }
 
 const QuoteSchema: Schema = new Schema(
@@ -33,7 +36,17 @@ const QuoteSchema: Schema = new Schema(
       type: String,
       required: [true, "Please provide the urgency level"],
     },
+    genderPreference: {
+      type: String,
+    },
+    hours: {
+      type: String,
+    },
+    message: {
+      type: String,
+    },
   },
+  { timestamps: true }
 );
 
 const Quote: Model<IQuote> = mongoose.models.Quote || mongoose.model<IQuote>("Quote", QuoteSchema);
