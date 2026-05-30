@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -130,6 +131,12 @@ export default function AdminLogin() {
             Encrypted
           </div>
         </div>
+        <p className="mt-6 text-center text-sm font-semibold text-gray-500">
+          Need an admin account?{" "}
+          <Link href="/admin/create-account" className="font-bold text-blue-600 hover:underline">
+            Create one
+          </Link>
+        </p>
       </motion.div>
     </main>
   );

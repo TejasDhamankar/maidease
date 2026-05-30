@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import { useSearchParams } from "next/navigation"
 import {
   Sidebar,
   SidebarContent,
@@ -17,7 +18,8 @@ import {
   LayoutDashboardIcon, 
   UsersIcon, 
   LogOutIcon, 
-  ChevronUp
+  ChevronUp,
+  BriefcaseBusinessIcon
 } from "lucide-react"
 import { logout } from "@/app/admin/login/actions"
 import {
@@ -29,6 +31,29 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export function AdminSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const searchParams = useSearchParams();
+  const activeTab = searchParams.get("tab") || "dashboard";
+  const navItems = [
+    {
+      label: "Dashboard",
+      href: "/admin/dashboard",
+      tab: "dashboard",
+      Icon: LayoutDashboardIcon,
+    },
+    {
+      label: "Service Leads",
+      href: "/admin/dashboard?tab=service",
+      tab: "service",
+      Icon: UsersIcon,
+    },
+    {
+      label: "Job Applications",
+      href: "/admin/dashboard?tab=jobs",
+      tab: "jobs",
+      Icon: BriefcaseBusinessIcon,
+    },
+  ];
+
   return (
     <Sidebar collapsible="offcanvas" className="border-r border-slate-200" {...props}>
       <SidebarHeader className="p-4">
@@ -48,29 +73,20 @@ export function AdminSidebar({ ...props }: React.ComponentProps<typeof Sidebar>)
           <SidebarGroupLabel className="text-slate-400 font-bold text-[10px] uppercase tracking-widest px-4 mb-2">Main Navigation</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              <SidebarMenuItem>
-                <SidebarMenuButton 
-                  asChild 
-                  isActive={true}
-                  className="px-4 h-11 rounded-xl data-[active=true]:bg-blue-50 data-[active=true]:text-blue-700 hover:bg-slate-50 transition-colors"
-                >
-                  <a href="/admin/dashboard">
-                    <LayoutDashboardIcon className="size-4" />
-                    <span className="font-medium">Dashboard</span>
-                  </a>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton 
-                  asChild
-                  className="px-4 h-11 rounded-xl hover:bg-slate-50 transition-colors"
-                >
-                  <a href="/admin/dashboard">
-                    <UsersIcon className="size-4" />
-                    <span className="font-medium">Service Leads</span>
-                  </a>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
+              {navItems.map((item) => (
+                <SidebarMenuItem key={item.tab}>
+                  <SidebarMenuButton
+                    asChild
+                    isActive={activeTab === item.tab}
+                    className="px-4 h-11 rounded-xl data-[active=true]:bg-orange-50 data-[active=true]:text-orange-600 hover:bg-slate-50 transition-colors"
+                  >
+                    <a href={item.href}>
+                      <item.Icon className="size-4" />
+                      <span className="font-medium">{item.label}</span>
+                    </a>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
