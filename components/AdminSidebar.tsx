@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import Image from "next/image"
 import { useSearchParams } from "next/navigation"
 import {
   Sidebar,
@@ -57,14 +58,17 @@ export function AdminSidebar({ ...props }: React.ComponentProps<typeof Sidebar>)
   return (
     <Sidebar collapsible="offcanvas" className="border-r border-slate-200" {...props}>
       <SidebarHeader className="p-4">
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-200">
-            <span className="text-white font-bold text-sm leading-none">BB</span>
+        <div className="flex flex-col gap-2">
+          <div className="relative h-11 w-full">
+            <Image
+              src="/logo_website-.png"
+              alt="BB HOSPITALITY"
+              fill
+              priority
+              className="object-contain object-left"
+            />
           </div>
-          <div className="flex flex-col">
-            <span className="text-base font-semibold text-slate-900 leading-tight">BB HOSPITALITY</span>
-            <span className="text-[10px] font-bold text-blue-600 uppercase tracking-widest">Admin Portal</span>
-          </div>
+          <span className="pl-1 text-[10px] font-bold uppercase tracking-widest text-orange-500">Admin Portal</span>
         </div>
       </SidebarHeader>
 

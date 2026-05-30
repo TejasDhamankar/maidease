@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -63,11 +62,17 @@ export default function AdminLogin() {
         className="relative z-20 w-full max-w-md bg-[#f8f9f6]/95 backdrop-blur-md p-8 sm:p-10 rounded-[2.5rem] shadow-2xl border border-white"
       >
         <div className="flex flex-col items-center mb-8">
-          <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-blue-600/20">
-            <span className="text-white font-bold text-xl">BB</span>
+          <div className="relative mb-5 h-14 w-72 max-w-full">
+            <Image
+              src="/logo_website-.png"
+              alt="BB HOSPITALITY"
+              fill
+              priority
+              className="object-contain"
+            />
           </div>
           <h1 className="text-3xl font-medium text-[#111827] tracking-tight text-center">
-            BB HOSPITALITY Admin
+            Admin Login
           </h1>
           <p className="text-gray-500 text-sm mt-2">Welcome back! Please login to your account.</p>
         </div>
@@ -131,12 +136,6 @@ export default function AdminLogin() {
             Encrypted
           </div>
         </div>
-        <p className="mt-6 text-center text-sm font-semibold text-gray-500">
-          Need an admin account?{" "}
-          <Link href="/admin/create-account" className="font-bold text-blue-600 hover:underline">
-            Create one
-          </Link>
-        </p>
       </motion.div>
     </main>
   );
