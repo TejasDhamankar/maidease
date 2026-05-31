@@ -8,22 +8,22 @@ export default function Services() {
   const services = [
     {
       title: "House Cleaning",
-      image: "/GettyImages-1456829834.webp", // Replace with your residential cleaning image
+      image: "/images/Maid Service.jpeg",
       icon: Home,
     },
     {
       title: "Office Cleaning",
-      image: "/GettyImages-1350786822-1.webp", // Replace with your commercial cleaning image
+      image: "/images/👨‍💼 Office Boy.jpeg",
       icon: Briefcase,
     },
     {
       title: "Deep Cleaning",
-      image: "/GettyImages-1724689200.webp", // Replace with your deep cleaning image
+      image: "/images/🧹 Housekeeping Staff.jpeg",
       icon: Armchair,
     },
     {
       title: "Move In Out Cleaning",
-      image: "/GettyImages-1226346559-1.webp", // Replace with your move in/out image
+      image: "/images/📦 Delivery Boy.jpeg",
       icon: Truck,
     }
   ];
@@ -64,12 +64,12 @@ export default function Services() {
                 className="bg-gradient-to-b from-[#eef26c] to-[#e2f6d1] p-4 rounded-[2rem] flex flex-col h-full group shadow-sm hover:shadow-md transition-shadow"
               >
                 {/* Image Container with Floating Icon */}
-                <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6">
+                <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-white mb-6">
                   <Image 
                     src={service.image} 
                     alt={service.title} 
                     fill 
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-contain group-hover:scale-105 transition-transform duration-500"
                   />
                   {/* Floating Squircle Icon */}
                   <div className="absolute top-4 left-4 w-12 h-12 bg-white/95 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-sm z-10">

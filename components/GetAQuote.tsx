@@ -184,8 +184,8 @@ export default function GetAQuote() {
 
           {/* --- RIGHT PANEL: IMAGE & GUARANTEE CARD --- */}
           <div className="lg:col-span-6 xl:col-span-7 flex flex-col gap-6">
-            <div className="relative w-full min-h-[320px] overflow-hidden rounded-[2.5rem] shadow-sm md:min-h-[420px] lg:flex-1">
-              <Image src="/Get_a_Quote.png" alt="Professional Cleaners" fill className="object-cover" />
+            <div className="relative w-full overflow-hidden rounded-[2.5rem] bg-slate-50 shadow-sm aspect-square lg:flex-1">
+              <Image src="/images/Maid Service.jpeg" alt="BB HOSPITALITY maid service" fill className="object-contain" />
             </div>
 
             <motion.div className="relative bg-[#f8f9f6] rounded-[2.5rem] p-8 md:p-10 overflow-hidden shadow-sm flex flex-col justify-center min-h-[220px]">

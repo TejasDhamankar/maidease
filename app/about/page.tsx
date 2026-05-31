@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { CheckCircle2, Zap, Heart, Users, Award } from "lucide-react";
 
@@ -112,12 +113,12 @@ export default function AboutPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="relative h-96 rounded-3xl overflow-hidden shadow-xl">
+              <div className="relative mx-auto aspect-square w-full max-w-[520px] rounded-3xl overflow-hidden bg-slate-50 shadow-xl">
                 <Image
-                  src="/GettyImages-1226346559-1.webp"
-                  alt="Our Story"
+                  src="/images/👨‍👩‍👧‍👦 Happy Family (Main Hero Image).jpeg"
+                  alt="Happy family served by BB HOSPITALITY"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
             </motion.div>
@@ -310,13 +311,13 @@ export default function AboutPage() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative h-80 rounded-3xl overflow-hidden shadow-xl"
+            className="relative mx-auto aspect-square w-full max-w-[620px] rounded-3xl overflow-hidden bg-slate-50 shadow-xl"
           >
             <Image
-              src="/GettyImages-1350786822-1.webp"
-              alt="Our Team"
+              src="/images/🧹 Housekeeping Staff.jpeg"
+              alt="BB HOSPITALITY housekeeping staff"
               fill
-              className="object-cover"
+              className="object-contain"
             />
           </motion.div>
         </div>
@@ -339,11 +340,15 @@ export default function AboutPage() {
               Join thousands of happy customers who trust us with their homes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-6 rounded-full text-base transition-transform hover:scale-105">
-                Get Your Free Quote Today
+              <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-6 rounded-full text-base transition-transform hover:scale-105">
+                <Link href="/#booking">
+                  Get Your Free Quote Today
+                </Link>
               </Button>
-              <Button className="bg-white hover:bg-gray-100 text-blue-600 font-semibold px-8 py-6 rounded-full text-base border-2 border-blue-600 transition-transform hover:scale-105">
-                Contact Us
+              <Button asChild className="bg-white hover:bg-gray-100 text-blue-600 font-semibold px-8 py-6 rounded-full text-base border-2 border-blue-600 transition-transform hover:scale-105">
+                <Link href="/contact">
+                  Contact Us
+                </Link>
               </Button>
             </div>
           </motion.div>

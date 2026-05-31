@@ -78,8 +78,8 @@ export default function ContactPage() {
             </div>
 
             <div className="lg:col-span-5">
-              <div className="relative rounded-[3rem] overflow-hidden shadow-[0_35px_60px_-30px_rgba(17,24,39,0.25)]">
-                <Image src="/GettyImages-1226346559-1.webp" alt="Cleaning team" width={1200} height={900} className="object-cover w-full h-[460px] md:h-[550px]" />
+              <div className="relative rounded-[3rem] overflow-hidden bg-slate-50 shadow-[0_35px_60px_-30px_rgba(17,24,39,0.25)]">
+                <Image src="/images/👨‍👩‍👧‍👦 Happy Family (Main Hero Image).jpeg" alt="Happy family supported by BB HOSPITALITY" width={1200} height={1200} className="aspect-square w-full object-contain" />
                 <div className="absolute bottom-6 left-6 rounded-[2rem] bg-white/90 backdrop-blur-xl p-5 shadow-lg border border-white">
                   <p className="text-sm text-gray-500">Need advice on our services?</p>
                   <p className="text-lg font-semibold text-gray-900">We’re ready to help.</p>

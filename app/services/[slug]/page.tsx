@@ -58,26 +58,15 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
   return (
     <main className="min-h-screen bg-white pt-24 text-blue-950 lg:pt-[96px]">
-      <section className="relative flex min-h-[288px] items-center justify-center overflow-hidden">
-        <Image
-          src={service.heroImage}
-          alt={service.title}
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-slate-950/65" />
-        <div className="absolute left-[12%] top-[45%] hidden text-5xl font-light text-white md:block">
-          +
-        </div>
-        <div className="absolute right-[13%] top-[24%] hidden text-5xl font-light text-white md:block">
-          +
-        </div>
+      <section className="relative flex min-h-[135px] items-center justify-center overflow-hidden bg-[linear-gradient(135deg,#12345b_0%,#0f6f9f_55%,#ff6b00_140%)] md:min-h-[160px]">
+        <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-white/15 to-transparent" />
+        <div className="absolute left-8 top-6 hidden h-10 w-10 rounded-full border border-white/15 md:block" />
+        <div className="absolute bottom-6 right-12 hidden h-14 w-14 rounded-full border border-orange-200/25 md:block" />
         <div className="relative z-10 px-4 text-center text-white">
-          <h1 className="text-4xl font-extrabold md:text-5xl">
+          <h1 className="mx-auto max-w-4xl text-2xl font-extrabold leading-tight md:text-3xl">
             {service.title}
           </h1>
-          <div className="mt-4 text-base font-bold">
+          <div className="mt-3 inline-flex items-center rounded-full bg-white/12 px-3 py-1 text-xs font-bold backdrop-blur">
             <Link href="/" className="hover:text-sky-200">
               Home
             </Link>{" "}
@@ -91,12 +80,12 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
       <article className="mx-auto max-w-5xl px-4 py-16">
         <section className="grid items-start gap-10 lg:grid-cols-[420px_1fr]">
-          <div className="relative mx-auto h-[460px] w-full max-w-[420px] overflow-hidden rounded-full bg-blue-50">
+          <div className="relative mx-auto aspect-square w-full max-w-[420px] overflow-hidden rounded-full bg-blue-50">
             <Image
               src={service.image}
               alt={service.introTitle}
               fill
-              className="object-cover"
+              className="object-contain"
             />
           </div>
           <div>
@@ -294,12 +283,12 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 href={`/services/${item.slug}`}
                 className="group overflow-hidden rounded-lg bg-blue-950 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative aspect-square overflow-hidden bg-white">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover transition duration-500 group-hover:scale-105"
+                    className="object-contain transition duration-500 group-hover:scale-105"
                   />
                 </div>
                 <h3 className="py-3 text-center text-lg font-extrabold text-white">

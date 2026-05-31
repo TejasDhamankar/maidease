@@ -23,21 +23,21 @@ export default function Testimonials() {
       id: 1,
       name: "JESSICA CLARK",
       role: "Customer",
-      image: "/Service_Card_1.png", // Replace with actual avatar
+      image: "/images/👨‍👩‍👧‍👦 Happy Family (Main Hero Image).jpeg",
       text: "Amazing and highly efficient, met all my expectations and more, they were there on time and left my duplex in pristine conditions. Thank BB HOSPITALITY."
     },
     {
       id: 2,
       name: "CARLOS MOYA",
       role: "Customer",
-      image: "/Service_Card_2.png", // Replace with actual avatar
+      image: "/images/Maid Service.jpeg",
       text: "Amazing and highly efficient, met all my expectations and more, they were there on time and left my duplex in pristine conditions. Thank BB HOSPITALITY."
     },
     {
       id: 3,
       name: "SARAH JENKINS",
       role: "Customer",
-      image: "/Service_Card_1.png", 
+      image: "/images/🧹 Housekeeping Staff.jpeg", 
       text: "The team was incredibly professional and thorough. My office has never looked better. Highly recommend their commercial cleaning services!"
     }
   ];
@@ -119,7 +119,7 @@ export default function Testimonials() {
                         src={testimonial.image} 
                         alt={testimonial.name} 
                         fill 
-                        className="object-cover"
+                        className="object-contain"
                       />
                     </div>
                     <div className="flex flex-col">

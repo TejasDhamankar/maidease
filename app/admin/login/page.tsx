@@ -31,7 +31,7 @@ export default function AdminLogin() {
       {/* Decorative background similar to Hero */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="/Hero_Background_Image.png" 
+          src="/images/👨‍👩‍👧‍👦 Happy Family (Main Hero Image).jpeg" 
           alt="Background" 
           fill
           className="object-cover opacity-20"

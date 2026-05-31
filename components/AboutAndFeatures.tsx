@@ -97,12 +97,12 @@ export default function AboutAndFeatures() {
           
           {/* Right Image */}
           <div className="w-full lg:w-1/2 relative">
-            <div className="relative w-full aspect-square md:aspect-[4/3] rounded-[2rem] overflow-hidden shadow-md">
+            <div className="relative mx-auto aspect-square w-full max-w-[520px] rounded-[2rem] overflow-hidden bg-white shadow-md">
               <Image 
-                src="/Why_Choose_Us.png" 
-                alt="Cleaning Team" 
+                src="/images/🧹 Housekeeping Staff.jpeg" 
+                alt="BB HOSPITALITY housekeeping team" 
                 fill 
-                className="object-cover"
+                className="object-contain"
               />
             </div>
           </div>

@@ -19,14 +19,13 @@ import {
   Gauge,
   Home,
   MessageCircle,
+  Mars,
   Search,
   ShieldCheck,
   Sparkles,
   Star,
   Stethoscope,
-  User,
   UserRoundCheck,
-  UsersRound,
   Venus,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -51,32 +50,32 @@ const services = [
 const benefits = [
   {
     title: "Quick & Easy",
-    image: "/GettyImages-1456829834.webp",
+    image: "/images/Maid Service.jpeg",
     text: "No waiting for interviews. Search, view profiles, shortlist, and book faster.",
   },
   {
     title: "High Quality",
-    image: "/GettyImages-1724689200.webp",
+    image: "/images/🧹 Housekeeping Staff.jpeg",
     text: "Trained hospitality staff for homes, apartments, offices, and care needs.",
   },
   {
     title: "Safe & Reliable",
-    image: "/GettyImages-1226346559-1.webp",
+    image: "/images/👨‍👩‍👧‍👦 Happy Family (Main Hero Image).jpeg",
     text: "Identity checks, document verification, and guided onboarding for every candidate.",
   },
   {
     title: "Free Replacement",
-    image: "/GettyImages-1350786822-1.webp",
+    image: "/images/👨‍💼 Office Boy.jpeg",
     text: "If a staff member leaves within the service window, we help you replace them.",
   },
   {
     title: "Multiple Options",
-    image: "/Service_Card_1.png",
+    image: "/images/👶 Babysitter.jpeg",
     text: "Review multiple profiles and select the candidate that fits your home best.",
   },
   {
     title: "Service First",
-    image: "/Service_Card_2.png",
+    image: "/images/🩺 Patient Care.jpeg",
     text: "A dedicated team supports you before booking and after joining.",
   },
 ];
@@ -125,9 +124,8 @@ function BookingCard() {
     { label: "I'm Just Planning", Icon: Clipboard },
   ];
   const genderOptions = [
-    { label: "Male", Icon: User },
+    { label: "Male", Icon: Mars },
     { label: "Female", Icon: Venus },
-    { label: "Any", Icon: UsersRound },
   ];
 
   const goNext = () => {
@@ -270,7 +268,7 @@ function BookingCard() {
           <h2 className="mb-5 text-center text-xl font-extrabold text-[#12345b] md:text-2xl">
             Which Gender Do You Prefer?
           </h2>
-          <div className="grid grid-cols-3 gap-2 sm:gap-3">
+          <div className="mx-auto grid max-w-md grid-cols-2 gap-3 sm:gap-4">
             {genderOptions.map(({ label, Icon }) => (
               <button
                 key={label}
@@ -395,8 +393,8 @@ export default function HomePage() {
             <h1 className="mb-5 text-3xl font-extrabold text-white underline decoration-white/80 underline-offset-4 md:text-4xl">
               Why Choose Us
             </h1>
-            <div className="relative mx-auto h-64 w-full max-w-[460px] overflow-hidden rounded-xl bg-white/10 shadow-[0_18px_45px_rgba(15,23,42,0.12)] md:h-80 md:max-w-[540px]">
-              <Image src="/Why_Choose_Us.png" alt="BB HOSPITALITY verified staff" fill className="object-cover object-center" priority />
+            <div className="relative mx-auto aspect-square w-full max-w-[400px] overflow-hidden rounded-xl bg-white/10 shadow-[0_18px_45px_rgba(15,23,42,0.12)]">
+              <Image src="/images/👨‍👩‍👧‍👦 Happy Family (Main Hero Image).jpeg" alt="BB HOSPITALITY verified staff" fill className="object-contain object-center" priority />
             </div>
             <p className="mt-5 text-xl font-extrabold text-[#12345b]">
               Trained By Experts, Candidates
@@ -447,8 +445,8 @@ export default function HomePage() {
 
       <section id="why-choose-us" className="px-4 py-14">
         <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-2">
-          <div className="relative mx-auto h-72 w-full max-w-md">
-            <Image src="/Service_Card_1.png" alt="Choosing trained hospitality staff" fill className="object-contain" />
+          <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-xl bg-slate-50">
+            <Image src="/images/👨‍💼 Office Boy.jpeg" alt="Choosing trained hospitality staff" fill className="object-contain" />
           </div>
           <div>
             <h2 className="mb-2 text-3xl font-extrabold text-[#12345b]">Why Choose Us</h2>
@@ -475,8 +473,8 @@ export default function HomePage() {
               <Link href="#booking">Post Your Requirement</Link>
             </Button>
           </div>
-          <div className="relative z-10 mx-auto mt-8 h-80 w-64 md:absolute md:bottom-[-34px] md:right-14 md:mt-0 md:h-[360px] md:w-[280px]">
-            <Image src="/Get_a_Quote.png" alt="BB HOSPITALITY mobile app" fill className="rounded-[2rem] object-cover object-center shadow-2xl ring-4 ring-white/15" />
+          <div className="relative z-10 mx-auto mt-8 aspect-square w-72 max-w-full overflow-hidden rounded-[2rem] bg-white/10 md:absolute md:bottom-[-34px] md:right-10 md:mt-0 md:w-[330px]">
+            <Image src="/images/Maid Service.jpeg" alt="BB HOSPITALITY home staffing support" fill className="rounded-[2rem] object-contain object-center shadow-2xl ring-4 ring-white/15" />
           </div>
         </div>
       </section>
@@ -508,9 +506,9 @@ export default function HomePage() {
         <h2 className="mb-8 text-center text-3xl font-extrabold text-[#12345b]">Why Use BB HOSPITALITY?</h2>
         <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-2">
           {benefits.map((item) => (
-            <article key={item.title} className="grid grid-cols-[110px_1fr] items-center overflow-hidden rounded-xl border border-slate-100 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.12)] transition hover:-translate-y-1">
-              <div className="relative h-full min-h-28 overflow-hidden rounded-r-[60px]">
-                <Image src={item.image} alt={item.title} fill className="object-cover" />
+            <article key={item.title} className="grid grid-cols-[130px_1fr] items-center overflow-hidden rounded-xl border border-slate-100 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.12)] transition hover:-translate-y-1">
+              <div className="relative aspect-square h-full min-h-32 overflow-hidden rounded-r-[60px] bg-slate-50">
+                <Image src={item.image} alt={item.title} fill className="object-contain" />
               </div>
               <div className="p-5">
                 <h3 className="mb-2 text-lg font-extrabold text-slate-950">{item.title}</h3>
@@ -557,7 +555,7 @@ export default function HomePage() {
                 <div className="mb-5 flex text-yellow-400">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="size-4 fill-current" />)}</div>
                 <div className="flex items-center gap-3">
                   <div className="relative size-12 overflow-hidden rounded-full bg-blue-50">
-                    <Image src={index === 1 ? "/Service_Card_2.png" : "/Service_Card_1.png"} alt={name} fill className="object-cover" />
+                    <Image src={index === 1 ? "/images/👴 Elder Care.jpeg" : "/images/👨‍👩‍👧‍👦 Happy Family (Main Hero Image).jpeg"} alt={name} fill className="object-contain" />
                   </div>
                   <strong className="text-sm text-[#12345b]">{name}</strong>
                 </div>
@@ -592,14 +590,14 @@ export default function HomePage() {
         <h2 className="mx-auto mb-5 max-w-5xl text-2xl font-extrabold text-[#12345b]">Our Services</h2>
         <div className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            ["Elder Care", "elder-care", "/GettyImages-1226346559-1.webp"],
-            ["Driver", "driver", "/GettyImages-1456829834.webp"],
-            ["Nursing", "nursing", "/GettyImages-1724689200.webp"],
-            ["Baby Care & Delivery Service", "baby-care-delivery-service", "/GettyImages-1350786822-1.webp"],
+            ["Elder Care", "elder-care", "/images/👴 Elder Care.jpeg"],
+            ["Driver", "driver", "/images/🚗 Driver.jpeg"],
+            ["Nursing", "nursing", "/images/🩺 Patient Care.jpeg"],
+            ["Baby Care & Delivery Service", "baby-care-delivery-service", "/images/🤱 Japa Maid-Mother Care.jpeg"],
           ].map(([title, slug, image]) => (
             <Link href={`/services/${slug}`} key={title} className="overflow-hidden rounded-lg bg-[#12345b] shadow-sm">
-              <div className="relative h-40">
-                <Image src={image} alt={title} fill className="object-cover transition hover:scale-105" />
+              <div className="relative aspect-square bg-white">
+                <Image src={image} alt={title} fill className="object-contain transition hover:scale-105" />
               </div>
               <h3 className="py-3 text-center text-sm font-extrabold text-white">{title}</h3>
             </Link>

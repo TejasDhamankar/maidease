@@ -13,20 +13,17 @@ export const metadata = {
 export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-white pt-24 text-blue-950 lg:pt-[96px]">
-      <section className="relative flex min-h-[260px] items-center justify-center overflow-hidden">
-        <Image
-          src="/GettyImages-1456829834.webp"
-          alt="BB HOSPITALITY services"
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-slate-950/65" />
+      <section className="relative flex min-h-[130px] items-center justify-center overflow-hidden bg-[linear-gradient(135deg,#12345b_0%,#0f6f9f_55%,#ff6b00_140%)] md:min-h-[155px]">
+        <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-white/15 to-transparent" />
+        <div className="absolute left-8 top-6 hidden h-10 w-10 rounded-full border border-white/15 md:block" />
+        <div className="absolute bottom-6 right-12 hidden h-14 w-14 rounded-full border border-orange-200/25 md:block" />
         <div className="relative z-10 px-4 text-center text-white">
-          <h1 className="text-4xl font-extrabold md:text-5xl">
+          <h1 className="text-2xl font-extrabold md:text-3xl">
             Our Services
           </h1>
-          <p className="mt-4 text-base font-bold">Home &gt;&gt; Services</p>
+          <p className="mt-3 inline-flex rounded-full bg-white/12 px-3 py-1 text-xs font-bold backdrop-blur">
+            Home &gt;&gt; Services
+          </p>
         </div>
       </section>
 
@@ -52,12 +49,12 @@ export default function ServicesPage() {
               href={`/services/${service.slug}`}
               className="group flex h-full flex-col overflow-hidden rounded-xl border border-slate-100 bg-white shadow-[0_8px_28px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 hover:border-orange-200 hover:shadow-[0_18px_45px_rgba(18,52,91,0.16)]"
             >
-              <div className="relative h-52 overflow-hidden">
+              <div className="relative aspect-square overflow-hidden bg-slate-50">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
-                  className="object-cover transition duration-500 group-hover:scale-105"
+                  className="object-contain transition duration-500 group-hover:scale-105"
                 />
               </div>
               <div className="flex flex-1 flex-col p-6">

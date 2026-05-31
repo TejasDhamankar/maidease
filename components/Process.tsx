@@ -22,7 +22,7 @@ export default function Process() {
       id: 1,
       title: "Free Quote",
       desc: "Tell us about your home and choose the date you want.",
-      icon: "/Book.png",
+      icon: "/images/👨‍👩‍👧‍👦 Happy Family (Main Hero Image).jpeg",
       delay: 0.2,
       // Cluster for Step 1 (Top-Left)
       leaves: [
@@ -35,7 +35,7 @@ export default function Process() {
       id: 2,
       title: "Clean",
       desc: "Our seasoned team of full-time cleaners will transform your home.",
-      icon: "/Clean.png",
+      icon: "/images/🧹 Housekeeping Staff.jpeg",
       delay: 0.4,
       // Cluster for Step 2 (Top-Right)
       leaves: [
@@ -48,7 +48,7 @@ export default function Process() {
       id: 3,
       title: "Relax",
       desc: "Sit back and enjoy how amazing your home or business looks now.",
-      icon: "/Relax.png",
+      icon: "/images/👴 Elder Care.jpeg",
       delay: 0.6,
       // Cluster for Step 3 (Middle-Right)
       leaves: [
@@ -128,7 +128,7 @@ export default function Process() {
                     alt={step.title} 
                     width={80} 
                     height={80} 
-                    className="object-contain relative z-10" 
+                    className="relative z-10 h-24 w-24 rounded-full object-contain" 
                   />
                 </div>
                 

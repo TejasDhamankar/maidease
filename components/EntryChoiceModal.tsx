@@ -19,45 +19,45 @@ export default function EntryChoiceModal() {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[80] flex items-center justify-center bg-[#12345b]/65 px-3 py-4 backdrop-blur-[2px] sm:px-4 sm:py-5">
-      <div className="relative max-h-[88vh] w-full max-w-[430px] overflow-y-auto rounded-xl border border-white/70 bg-white px-4 pb-5 pt-11 shadow-[0_28px_80px_rgba(18,52,91,0.35)] sm:px-7 sm:pb-6 sm:pt-12">
+    <div className="fixed inset-0 z-[80] flex items-center justify-center bg-[#12345b]/70 px-3 py-4 backdrop-blur-sm sm:px-4 sm:py-5">
+      <div className="relative w-full max-w-[430px] rounded-2xl border border-white/80 bg-white px-5 pb-5 pt-10 shadow-[0_34px_90px_rgba(18,52,91,0.42)] sm:px-7 sm:pb-6 sm:pt-11">
         <button
           type="button"
           onClick={close}
           aria-label="Close popup"
-          className="absolute right-3 top-3 flex size-9 items-center justify-center rounded-full text-slate-600 transition hover:bg-orange-50 hover:text-orange-600"
+          className="absolute right-4 top-4 flex size-10 items-center justify-center rounded-full text-slate-600 transition hover:bg-orange-50 hover:text-orange-600"
         >
-          <X className="size-7 stroke-[3.5]" />
+          <X className="size-7 stroke-[3]" />
         </button>
 
-        <h2 className="mx-auto max-w-xs text-center text-[1.65rem] font-extrabold leading-tight text-[#12345b] sm:text-[2rem]">
+        <h2 className="mx-auto max-w-sm text-center text-2xl font-extrabold leading-tight text-[#12345b] sm:text-[1.8rem]">
           What Do You Want To Do?
         </h2>
 
-        <div className="mx-auto mt-6 grid max-w-[330px] gap-4 sm:mt-7 sm:gap-5">
+        <div className="mx-auto mt-5 grid max-w-[330px] gap-4">
           <Link
             href="/#booking"
             onClick={close}
             className="group block text-center"
           >
-            <div className="relative h-[142px] overflow-hidden rounded-xl border border-slate-100 bg-slate-100 shadow-[0_12px_30px_rgba(18,52,91,0.12)] sm:h-[155px]">
+            <div className="relative h-[138px] overflow-hidden rounded-xl border border-slate-100 bg-slate-50 shadow-[0_12px_30px_rgba(18,52,91,0.14)] transition duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_18px_42px_rgba(18,52,91,0.2)] sm:h-[150px]">
               <Image
-                src="/Why_Choose_Us.png"
+                src="/images/👨‍👩‍👧‍👦 Happy Family (Main Hero Image).jpeg"
                 alt="Hire candidate"
                 fill
-                className="object-cover transition duration-300 group-hover:scale-105"
+                className="object-cover object-center transition duration-300 group-hover:scale-105"
                 sizes="405px"
                 priority
               />
-              <div className="absolute inset-x-0 bottom-0 flex min-h-20 items-end justify-center bg-gradient-to-t from-[#12345b] via-[#12345b]/75 to-transparent px-4 pb-4">
-                <p className="text-xl font-extrabold leading-6 text-white sm:text-2xl">
+              <div className="absolute inset-x-0 bottom-0 flex min-h-16 items-end justify-center bg-gradient-to-t from-[#12345b] via-[#12345b]/80 to-transparent px-3 pb-2.5">
+                <p className="text-lg font-extrabold leading-5 text-white sm:text-xl">
                   I Want To Hire
                   <br />
                   Candidate
                 </p>
               </div>
             </div>
-            <p className="mt-3 text-lg font-extrabold text-[#12345b] sm:text-2xl">
+            <p className="mt-2 text-lg font-extrabold leading-tight text-[#12345b] sm:text-xl">
               मुझे लोग काम पे रखना है
             </p>
           </Link>
@@ -67,22 +67,22 @@ export default function EntryChoiceModal() {
             onClick={close}
             className="group block text-center"
           >
-            <div className="relative h-[142px] overflow-hidden rounded-xl border border-slate-100 bg-slate-100 shadow-[0_12px_30px_rgba(18,52,91,0.12)] sm:h-[155px]">
+            <div className="relative h-[138px] overflow-hidden rounded-xl border border-slate-100 bg-slate-50 shadow-[0_12px_30px_rgba(18,52,91,0.14)] transition duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_18px_42px_rgba(18,52,91,0.2)] sm:h-[150px]">
               <Image
-                src="/Service_Card_2.png"
+                src="/images/👨‍💼 Office Boy.jpeg"
                 alt="Apply for a job"
                 fill
-                className="object-cover object-top transition duration-300 group-hover:scale-105"
+                className="object-cover object-center transition duration-300 group-hover:scale-105"
                 sizes="405px"
                 priority
               />
-              <div className="absolute inset-x-0 bottom-0 flex min-h-20 items-end justify-center bg-gradient-to-t from-[#12345b] via-[#12345b]/75 to-transparent px-4 pb-4">
-                <p className="text-xl font-extrabold leading-6 text-white sm:text-2xl">
+              <div className="absolute inset-x-0 bottom-0 flex min-h-16 items-end justify-center bg-gradient-to-t from-[#12345b] via-[#12345b]/80 to-transparent px-3 pb-2.5">
+                <p className="text-lg font-extrabold leading-5 text-white sm:text-xl">
                   I Want A Job
                 </p>
               </div>
             </div>
-            <p className="mt-3 text-lg font-extrabold text-[#12345b] sm:text-2xl">
+            <p className="mt-2 text-lg font-extrabold leading-tight text-[#12345b] sm:text-xl">
               मुझे नौकरी चाहिए
             </p>
           </Link>

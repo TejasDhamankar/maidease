@@ -9,17 +9,17 @@ export default function Blog() {
     {
       category: "ORGANIZING",
       title: "The Deep Cleaning and Organizing",
-      image: "/GettyImages-1724689200.webp" 
+      image: "/images/🧹 Housekeeping Staff.jpeg" 
     },
     {
       category: "CLEANING",
       title: "Eco Friendly Products for Cleaning",
-      image: "/GettyImages-1456829834.webp"
+      image: "/images/Maid Service.jpeg"
     },
     {
       category: "TIPS",
       title: "House Cleaning Services Before Moving In",
-      image: "/GettyImages-1226346559-1.webp"
+      image: "/images/📦 Delivery Boy.jpeg"
     }
   ];
 
@@ -55,12 +55,12 @@ export default function Blog() {
               className="group cursor-pointer flex flex-col"
             >
               {/* Image Container */}
-              <div className="relative w-full aspect-[4/3] rounded-[2rem] overflow-hidden mb-6 shadow-sm">
+              <div className="relative w-full aspect-square rounded-[2rem] overflow-hidden bg-slate-50 mb-6 shadow-sm">
                 <Image 
                   src={post.image} 
                   alt={post.title} 
                   fill 
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-contain group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               

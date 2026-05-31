@@ -16,10 +16,10 @@ export default function Hero() {
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/Hero_Background_Image.png" 
-            alt="BB HOSPITALITY professional staff" 
+            src="/images/👨‍👩‍👧‍👦 Happy Family (Main Hero Image).jpeg" 
+            alt="Happy family with BB HOSPITALITY support" 
             fill
-            className="object-cover object-[80%_center] md:object-right"
+            className="object-cover object-center"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-white/40 to-transparent lg:hidden"></div>
@@ -81,9 +81,9 @@ export default function Hero() {
         {/* Floating Review Card (Bottom Right) */}
         <div className="hidden lg:flex absolute bottom-8 right-8 bg-white p-3 pr-5 rounded-2xl shadow-xl z-30 items-center gap-3 border border-gray-100">
           <div className="flex -space-x-3">
-             <div className="w-10 h-10 rounded-full bg-gray-200 border-2 border-white overflow-hidden relative"><Image src="/Service_Card_1.png" alt="user" fill className="object-cover"/></div>
-             <div className="w-10 h-10 rounded-full bg-gray-300 border-2 border-white overflow-hidden relative"><Image src="/Service_Card_2.png" alt="user" fill className="object-cover"/></div>
-             <div className="w-10 h-10 rounded-full bg-gray-400 border-2 border-white overflow-hidden relative"><Image src="/Get_a_Quote.png" alt="user" fill className="object-cover"/></div>
+             <div className="w-10 h-10 rounded-full bg-gray-200 border-2 border-white overflow-hidden relative"><Image src="/images/Maid Service.jpeg" alt="maid service customer" fill className="object-contain"/></div>
+             <div className="w-10 h-10 rounded-full bg-gray-300 border-2 border-white overflow-hidden relative"><Image src="/images/🧹 Housekeeping Staff.jpeg" alt="housekeeping customer" fill className="object-contain"/></div>
+             <div className="w-10 h-10 rounded-full bg-gray-400 border-2 border-white overflow-hidden relative"><Image src="/images/👨‍👩‍👧‍👦 Happy Family (Main Hero Image).jpeg" alt="happy family customer" fill className="object-contain"/></div>
           </div>
           <div className="flex flex-col">
             <div className="flex items-center gap-1 text-base font-bold text-gray-900 leading-none mb-1">
