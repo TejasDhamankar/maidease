@@ -4,28 +4,29 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import {
-  Ambulance,
   ArrowUp,
   Baby,
   BadgeCheck,
   Bike,
   CalendarDays,
-  Car,
-  ChefHat,
   ChevronDown,
   Clock3,
   Clipboard,
-  ClipboardCheck,
+  BriefcaseBusiness,
+  Building2,
+  CarFront,
+  CookingPot,
   Gauge,
-  Home,
+  HandHeart,
+  HeartPulse,
+  Hospital,
   MessageCircle,
   Mars,
+  PackageCheck,
   Search,
   ShieldCheck,
-  Sparkles,
+  SprayCan,
   Star,
-  Stethoscope,
-  UserRoundCheck,
   Venus,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -34,17 +35,17 @@ import LocationInput from "@/components/LocationInput";
 import { inquiryServices } from "@/lib/inquiry";
 
 const services = [
-  { title: "Maid", slug: "maid", icon: Sparkles, color: "text-lime-600", bg: "bg-lime-100", description: "Daily cleaning and home help." },
-  { title: "Cook", slug: "cook", icon: ChefHat, color: "text-amber-500", bg: "bg-amber-100", description: "Fresh meals and kitchen support." },
-  { title: "Baby Care & Delivery Service", displayTitle: "Baby Care", slug: "baby-care-delivery-service", icon: Baby, color: "text-orange-500", bg: "bg-orange-100", description: "Japa, childcare, and newborn care." },
-  { title: "Patient Care", slug: "patient-care", icon: Ambulance, color: "text-sky-600", bg: "bg-sky-100", description: "Recovery and daily patient support." },
-  { title: "Elder Care", slug: "elder-care", icon: UserRoundCheck, color: "text-emerald-600", bg: "bg-emerald-100", description: "Compassionate senior assistance." },
-  { title: "Driver", slug: "driver", icon: Car, color: "text-indigo-600", bg: "bg-indigo-100", description: "Personal and office drivers." },
-  { title: "Nursing", slug: "nursing", icon: Stethoscope, color: "text-red-500", bg: "bg-red-100", description: "Home nursing care support." },
-  { title: "Delivery Boy", slug: "delivery", icon: Bike, color: "text-orange-500", bg: "bg-orange-100", description: "Errands and delivery staffing." },
-  { title: "Security Guard", slug: "security-guard", icon: ShieldCheck, color: "text-cyan-600", bg: "bg-cyan-100", description: "Day, night, and site security." },
-  { title: "Housekeeping", slug: "housekeeping", icon: Home, color: "text-[#12345b]", bg: "bg-orange-50", description: "Office and home housekeeping." },
-  { title: "Office Support", slug: "office-support", icon: ClipboardCheck, color: "text-violet-600", bg: "bg-violet-100", description: "Office boys and support staff." },
+  { title: "Maid", slug: "maid", icon: SprayCan, color: "text-emerald-700", bg: "bg-emerald-50", description: "Daily cleaning and home help." },
+  { title: "Cook", slug: "cook", icon: CookingPot, color: "text-amber-700", bg: "bg-amber-50", description: "Fresh meals and kitchen support." },
+  { title: "Baby Care & Delivery Service", displayTitle: "Baby Care", slug: "baby-care-delivery-service", icon: Baby, color: "text-orange-700", bg: "bg-orange-50", description: "Japa, childcare, and newborn care." },
+  { title: "Patient Care", slug: "patient-care", icon: Hospital, color: "text-sky-700", bg: "bg-sky-50", description: "Recovery and daily patient support." },
+  { title: "Elder Care", slug: "elder-care", icon: HandHeart, color: "text-teal-700", bg: "bg-teal-50", description: "Compassionate senior assistance." },
+  { title: "Driver", slug: "driver", icon: CarFront, color: "text-indigo-700", bg: "bg-indigo-50", description: "Personal and office drivers." },
+  { title: "Nursing", slug: "nursing", icon: HeartPulse, color: "text-rose-700", bg: "bg-rose-50", description: "Home nursing care support." },
+  { title: "Delivery Boy", slug: "delivery", icon: PackageCheck, color: "text-orange-700", bg: "bg-orange-50", description: "Errands and delivery staffing." },
+  { title: "Security Guard", slug: "security-guard", icon: ShieldCheck, color: "text-cyan-700", bg: "bg-cyan-50", description: "Day, night, and site security." },
+  { title: "Housekeeping", slug: "housekeeping", icon: Building2, color: "text-slate-700", bg: "bg-slate-50", description: "Office and home housekeeping." },
+  { title: "Office Support", slug: "office-support", icon: BriefcaseBusiness, color: "text-violet-700", bg: "bg-violet-50", description: "Office boys and support staff." },
 ];
 
 const benefits = [
@@ -417,8 +418,8 @@ export default function HomePage() {
                 key={item.title}
                 className="group flex min-h-44 items-start gap-4 rounded-lg border border-slate-200 bg-white p-5 shadow-[0_14px_34px_rgba(18,52,91,0.08)] transition duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-[0_24px_52px_rgba(18,52,91,0.14)]"
               >
-                <span className={`flex size-14 shrink-0 items-center justify-center rounded-lg ${item.bg}`}>
-                  <Icon className={`size-8 stroke-[2.4] ${item.color}`} />
+                <span className={`flex size-12 shrink-0 items-center justify-center rounded-xl ${item.bg} ring-1 ring-slate-200/70`}>
+                  <Icon className={`size-6 stroke-[2.1] ${item.color}`} />
                 </span>
                 <span className="flex min-w-0 flex-1 flex-col">
                   <span className="text-lg font-black leading-6 text-[#12345b]">
