@@ -57,13 +57,13 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
     .slice(0, 4);
 
   return (
-    <main className="min-h-screen bg-white pt-24 text-blue-950 lg:pt-[96px]">
+    <main className="min-h-screen bg-white pt-24 text-gray-900 lg:pt-[96px]">
       <section className="relative flex min-h-[135px] items-center justify-center overflow-hidden bg-[linear-gradient(135deg,#12345b_0%,#0f6f9f_55%,#ff6b00_140%)] md:min-h-[160px]">
         <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-white/15 to-transparent" />
         <div className="absolute left-8 top-6 hidden h-10 w-10 rounded-full border border-white/15 md:block" />
         <div className="absolute bottom-6 right-12 hidden h-14 w-14 rounded-full border border-orange-200/25 md:block" />
         <div className="relative z-10 px-4 text-center text-white">
-          <h1 className="mx-auto max-w-4xl text-2xl font-extrabold leading-tight md:text-3xl">
+          <h1 className="mx-auto max-w-4xl text-2xl font-bold tracking-tight leading-tight md:text-3xl">
             {service.title}
           </h1>
           <div className="mt-3 inline-flex items-center rounded-full bg-white/12 px-3 py-1 text-xs font-bold backdrop-blur">
@@ -89,10 +89,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             />
           </div>
           <div>
-            <h2 className="mb-4 text-3xl font-extrabold leading-tight text-blue-950">
+            <h2 className="mb-4 text-3xl font-bold tracking-tight leading-tight text-gray-900">
               {service.introTitle}
             </h2>
-            <div className="space-y-4 text-[15px] font-medium leading-8 text-slate-700">
+            <div className="space-y-4 text-[15px] leading-relaxed text-gray-700">
               {service.intro.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -100,9 +100,9 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           </div>
         </section>
 
-        <section className="mt-10 space-y-9 text-[15px] font-medium leading-8 text-slate-700">
+        <section className="mt-10 space-y-9 text-[15px] leading-relaxed text-gray-700">
           <div>
-            <h2 className="mb-4 text-2xl font-extrabold text-blue-950">
+            <h2 className="mb-4 text-2xl font-bold tracking-tight text-gray-900">
               Why Choose BB HOSPITALITY For {service.title} In Mumbai?
             </h2>
             <p>
@@ -122,7 +122,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           </div>
 
           <div>
-            <h2 className="mb-4 text-2xl font-extrabold text-blue-950">
+            <h2 className="mb-4 text-2xl font-bold tracking-tight text-gray-900">
               Full-Time Vs Part-Time {service.label} In Mumbai
             </h2>
             <p>
@@ -139,7 +139,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           </div>
 
           <div>
-            <h2 className="mb-5 text-2xl font-extrabold text-blue-950">
+            <h2 className="mb-5 text-2xl font-bold tracking-tight text-gray-900">
               {service.title} Offered By BB HOSPITALITY
             </h2>
             <p>
@@ -149,7 +149,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             <ul className="mt-4 list-disc space-y-3 pl-6">
               {service.includes.map((item) => (
                 <li key={item}>
-                  <strong className="text-blue-950">{item}:</strong> Support
+                  <strong className="text-gray-900">{item}:</strong> Support
                   can be discussed and assigned according to your requirement,
                   timing, and candidate skill set.
                 </li>
@@ -158,7 +158,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           </div>
 
           <div>
-            <h2 className="mb-4 text-2xl font-extrabold text-blue-950">
+            <h2 className="mb-4 text-2xl font-bold tracking-tight text-gray-900">
               Why You Should Hire From A Professional Service Agency Like Us
             </h2>
             <p>
@@ -171,7 +171,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           </div>
 
           <div>
-            <h2 className="mb-4 text-2xl font-extrabold text-blue-950">
+            <h2 className="mb-4 text-2xl font-bold tracking-tight text-gray-900">
               How Much Do You Have To Pay To Hire {service.label} In Mumbai?
             </h2>
             <p>
@@ -186,10 +186,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
         <section className="mt-9 grid gap-8 md:grid-cols-2">
           <div>
-            <h2 className="mb-5 text-xl font-extrabold text-blue-950">
+            <h2 className="mb-5 text-xl font-bold tracking-tight text-gray-900">
               Checklist For Choosing {service.title} For Your Home:
             </h2>
-            <ul className="space-y-3 text-[15px] font-medium text-slate-700">
+            <ul className="space-y-3 text-[15px] leading-relaxed text-gray-600">
               {service.checklist.map((item) => (
                 <li key={item} className="flex gap-3">
                   <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-blue-600" />
@@ -199,10 +199,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             </ul>
           </div>
           <div>
-            <h2 className="mb-5 text-xl font-extrabold text-blue-950">
+            <h2 className="mb-5 text-xl font-bold tracking-tight text-gray-900">
               Service Benefits:
             </h2>
-            <ul className="space-y-3 text-[15px] font-medium text-slate-700">
+            <ul className="space-y-3 text-[15px] leading-relaxed text-gray-600">
               {service.benefits.map((item) => (
                 <li key={item} className="flex gap-3">
                   <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-blue-600" />
@@ -214,7 +214,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         </section>
 
         <section className="mt-10">
-          <h2 className="mb-5 text-2xl font-extrabold text-blue-950">
+          <h2 className="mb-5 text-2xl font-bold tracking-tight text-gray-900">
             Frequently Asked Questions
           </h2>
           <div className="grid gap-4">
@@ -223,10 +223,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 key={faq.question}
                 className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm open:border-blue-200 open:bg-blue-50/30"
               >
-                <summary className="cursor-pointer text-base font-extrabold text-blue-950">
+                <summary className="cursor-pointer text-base font-semibold text-gray-900">
                   {faq.question}
                 </summary>
-                <p className="mt-3 text-sm font-medium leading-7 text-slate-700">
+                <p className="mt-3 text-sm leading-relaxed text-gray-700">
                   {faq.answer}
                 </p>
               </details>
@@ -237,7 +237,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         <section className="mt-12">
           <div className="rounded-lg border border-slate-200 bg-white p-4 shadow-[0_8px_28px_rgba(15,23,42,0.16)] md:p-6">
             <div className="grid gap-5 md:grid-cols-[200px_1fr]">
-              <aside className="rounded bg-sky-100 p-3 text-sm font-semibold text-blue-950">
+              <aside className="rounded bg-sky-100 p-3 text-sm font-semibold text-gray-900">
                 {locationTabs.map((area, index) => (
                   <div
                     key={area}
@@ -249,7 +249,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                   </div>
                 ))}
               </aside>
-              <div className="grid gap-x-8 gap-y-5 text-sm font-extrabold text-blue-700 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-x-8 gap-y-5 text-sm font-semibold text-gray-700 sm:grid-cols-2 lg:grid-cols-3">
                 {serviceLocations.map((item) => (
                   <Link
                     href={`/services/${service.slug}`}
@@ -262,18 +262,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               </div>
             </div>
           </div>
-          <div className="mt-6 text-center">
-            <Link
-              href="/services"
-              className="inline-flex h-10 items-center rounded bg-orange-500 px-8 text-xs font-extrabold text-white shadow-lg shadow-orange-500/20 transition hover:bg-orange-600"
-            >
-              View all location
-            </Link>
-          </div>
         </section>
 
         <section className="mt-14">
-          <h2 className="mb-6 text-3xl font-extrabold text-blue-950">
+          <h2 className="mb-6 text-3xl font-bold tracking-tight text-gray-900">
             Other Services
           </h2>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -291,7 +283,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                     className="object-contain transition duration-500 group-hover:scale-105"
                   />
                 </div>
-                <h3 className="py-3 text-center text-lg font-extrabold text-white">
+                <h3 className="py-3 text-center text-lg font-bold tracking-tight text-white">
                   {item.label}
                 </h3>
               </Link>

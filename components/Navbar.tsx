@@ -50,18 +50,22 @@ export default function Navbar() {
         isScrolled ? "shadow-[0_8px_30px_rgba(15,23,42,0.08)]" : "shadow-sm"
       }`}
     >
-      <div className="hidden border-b border-slate-100 text-xs font-semibold text-slate-700 lg:block">
+      <div className="hidden border-b border-slate-100 text-xs font-semibold text-gray-600 lg:block">
         <div className="mx-auto flex h-8 max-w-7xl items-center justify-between px-4">
           <div className="flex items-center gap-5">
-            <a href="tel:+919076354999" className="flex items-center gap-1.5 text-[#12345b] hover:text-orange-600">
+            <a href="tel:02247173377" className="flex items-center gap-1.5 text-gray-700 hover:text-orange-600">
               <Phone className="size-3.5 text-orange-500" />
-              Call: (+91) 9076354999
+              022 47173377
             </a>
-            <a href="mailto:info@bbhospitality.in" className="flex items-center gap-1.5 text-[#12345b] hover:text-orange-600">
+            <a href="tel:+919076354999" className="flex items-center gap-1.5 text-gray-700 hover:text-orange-600 border-l border-slate-200 pl-5">
+              <Phone className="size-3.5 text-orange-500" />
+              (+91) 9076354999
+            </a>
+            <a href="mailto:info@bbhospitality.in" className="flex items-center gap-1.5 text-gray-700 hover:text-orange-600">
               <Mail className="size-3.5 text-orange-500" />
               Mail us: info@bbhospitality.in
             </a>
-            <div className="flex items-center gap-2 text-[11px] text-slate-900">
+            <div className="flex items-center gap-2 text-[11px] text-gray-900">
               <span aria-label="Facebook">f</span>
               <span aria-label="X">x</span>
               <span aria-label="Instagram">in</span>
@@ -93,7 +97,7 @@ export default function Navbar() {
               >
                 <Link
                   href="/services"
-                  className="relative inline-flex items-center gap-1 text-sm font-bold text-[#12345b] transition-colors after:absolute after:-bottom-5 after:left-0 after:h-1 after:w-0 after:rounded-full after:bg-orange-500 after:transition-all hover:text-orange-600 group-hover:text-orange-600 group-hover:after:w-full"
+                  className="relative inline-flex items-center gap-1 text-sm font-semibold text-gray-700 transition-colors after:absolute after:-bottom-5 after:left-0 after:h-1 after:w-0 after:rounded-full after:bg-orange-500 after:transition-all hover:text-orange-600 group-hover:text-orange-600 group-hover:after:w-full"
                 >
                   Services
                   <ChevronDown className="size-3.5 transition-transform group-hover:rotate-180" />
@@ -108,7 +112,7 @@ export default function Navbar() {
                       <Link
                         key={service.slug}
                         href={`/services/${service.slug}`}
-                        className="rounded-lg px-3 py-2.5 text-[15px] font-semibold text-slate-700 transition hover:bg-orange-50 hover:text-orange-600"
+                        className="rounded-lg px-3 py-2.5 text-[15px] font-semibold text-gray-700 transition hover:bg-orange-50 hover:text-orange-600"
                       >
                         {service.label}
                       </Link>
@@ -120,7 +124,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="relative text-sm font-bold text-[#12345b] transition-colors after:absolute after:-bottom-5 after:left-0 after:h-1 after:w-0 after:rounded-full after:bg-orange-500 after:transition-all hover:text-orange-600 hover:after:w-full"
+                className="relative text-sm font-semibold text-gray-700 transition-colors after:absolute after:-bottom-5 after:left-0 after:h-1 after:w-0 after:rounded-full after:bg-orange-500 after:transition-all hover:text-orange-600 hover:after:w-full"
               >
                 {link.name}
               </Link>
@@ -128,7 +132,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <Button asChild className="hidden h-10 min-w-[210px] rounded bg-orange-500 px-5 font-bold text-white shadow-lg shadow-orange-500/20 hover:bg-orange-600 md:inline-flex">
+        <Button asChild className="hidden h-10 min-w-[210px] rounded bg-orange-500 px-5 font-semibold text-white shadow-lg shadow-orange-500/20 hover:bg-orange-600 md:inline-flex">
           <Link href="/apply-job" aria-live="polite">{jobCtaText}</Link>
         </Button>
 
@@ -149,7 +153,7 @@ export default function Navbar() {
                 <div key={link.name}>
                   <button
                     type="button"
-                    className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-left text-sm font-bold text-[#12345b] hover:bg-orange-50"
+                    className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-left text-sm font-semibold text-gray-700 hover:bg-orange-50"
                     onClick={() => setIsServicesOpen((value) => !value)}
                   >
                     Services
@@ -161,7 +165,7 @@ export default function Navbar() {
                         <Link
                           key={service.slug}
                           href={`/services/${service.slug}`}
-                          className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-orange-50 hover:text-orange-600"
+                          className="rounded-lg px-3 py-2 text-sm font-semibold text-gray-600 hover:bg-orange-50 hover:text-orange-600"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {service.label}
@@ -174,7 +178,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="rounded-lg px-3 py-3 text-sm font-bold text-[#12345b] hover:bg-orange-50"
+                  className="rounded-lg px-3 py-3 text-sm font-semibold text-gray-700 hover:bg-orange-50"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
@@ -182,12 +186,16 @@ export default function Navbar() {
               )
             )}
           </div>
-          <div className="grid gap-3 border-t border-slate-100 pt-4 text-sm font-semibold text-slate-700">
+          <div className="grid gap-3 border-t border-slate-100 pt-4 text-sm font-semibold text-gray-600">
+            <a href="tel:02247173377" className="flex items-center gap-2">
+              <Phone className="size-4 text-orange-500" />
+              022 47173377 (Landline)
+            </a>
             <a href="tel:+919076354999" className="flex items-center gap-2">
               <Phone className="size-4 text-orange-500" />
               (+91) 9076354999
             </a>
-            <Button asChild className="h-11 rounded bg-gradient-to-r from-orange-500 to-orange-600 font-bold text-white hover:from-orange-600 hover:to-orange-700">
+            <Button asChild className="h-11 rounded bg-gradient-to-r from-orange-500 to-orange-600 font-semibold text-white hover:from-orange-600 hover:to-orange-700">
               <Link href="/apply-job" onClick={() => setIsMobileMenuOpen(false)} aria-live="polite">
                 {jobCtaText}
               </Link>

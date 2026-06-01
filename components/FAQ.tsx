@@ -22,7 +22,7 @@ export default function FAQ() {
     },
     {
       question: "What time do you offer cleaning services?",
-      answer: "We offer flexible scheduling between 8:00 AM and 6:00 PM, Monday through Saturday. We can also accommodate special timing requests with advanced notice."
+      answer: "We offer flexible scheduling between 10:00 AM and 6:00 PM, Monday through Saturday. Sunday: Closed. We can also accommodate special timing requests with advanced notice."
     }
   ];
 
@@ -36,26 +36,36 @@ export default function FAQ() {
           <div className="lg:col-span-5 flex flex-col">
             <div className="mb-10">
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-xs font-bold tracking-widest text-gray-800 uppercase">FAQS</span>
+                <span className="text-xs font-semibold tracking-widest text-gray-600 uppercase">FAQS</span>
                 <span className="text-blue-600 text-lg font-light leading-none -mt-1">{"//"}</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-medium text-[#111827] leading-tight">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight tracking-tight">
                 Frequently Asked <br/> Questions
               </h2>
             </div>
 
             <div className="bg-[#eef5e5] rounded-[2rem] p-8 md:p-10 shadow-sm mt-auto max-w-sm">
-              <h3 className="text-xl md:text-2xl font-medium text-gray-900 mb-8 leading-snug">
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-8 leading-snug tracking-tight">
                 Looking for the cleaning service in Mumbai? Contact us now!
               </h3>
               
-              <div className="inline-flex items-center bg-white rounded-full py-2 pr-6 pl-2 shadow-sm gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#fbbf24] flex items-center justify-center shrink-0">
-                  <Phone className="w-4 h-4 text-gray-900" />
+              <div className="flex flex-col gap-3">
+                <div className="inline-flex items-center bg-white rounded-full py-2 pr-6 pl-2 shadow-sm gap-3">
+                  <div className="w-10 h-10 rounded-full bg-[#fbbf24] flex items-center justify-center shrink-0">
+                    <Phone className="w-4 h-4 text-gray-900" />
+                  </div>
+                  <span className="text-sm font-semibold text-gray-900 whitespace-nowrap">
+                    022 47173377
+                  </span>
                 </div>
-                <span className="text-sm font-semibold text-gray-900 whitespace-nowrap">
-                  +91 9076354999
-                </span>
+                <div className="inline-flex items-center bg-white rounded-full py-2 pr-6 pl-2 shadow-sm gap-3">
+                  <div className="w-10 h-10 rounded-full bg-[#fbbf24] flex items-center justify-center shrink-0">
+                    <Phone className="w-4 h-4 text-gray-900" />
+                  </div>
+                  <span className="text-sm font-semibold text-gray-900 whitespace-nowrap">
+                    +91 9076354999
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -73,7 +83,7 @@ export default function FAQ() {
                     onClick={() => setOpenIndex(isOpen ? null : index)}
                     className="w-full flex items-center justify-between p-6 text-left"
                   >
-                    <span className="text-base font-medium text-gray-900">{faq.question}</span>
+                    <span className="text-base font-semibold text-gray-900">{faq.question}</span>
                     <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shrink-0 ml-4 shadow-sm text-gray-500">
                       {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                     </div>
@@ -87,7 +97,7 @@ export default function FAQ() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                       >
-                        <div className="px-6 pb-6 pt-0 text-gray-500 text-sm leading-relaxed">
+                        <div className="px-6 pb-6 pt-0 text-gray-600 text-sm leading-relaxed">
                           {faq.answer}
                         </div>
                       </motion.div>

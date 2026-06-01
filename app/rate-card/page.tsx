@@ -169,30 +169,34 @@ export default function RateCardPage() {
   const totalRows = rateSections.reduce((count, section) => count + section.rows.length, 0);
 
   return (
-    <main className="min-h-screen bg-[#f7f9fc] pt-24 text-blue-950 lg:pt-[96px]">
+    <main className="min-h-screen bg-[#f7f9fc] pt-24 text-gray-900 lg:pt-[96px]">
       <section className="relative overflow-hidden bg-blue-950 px-4 py-16 text-white">
         <div className="absolute inset-x-0 bottom-0 h-24 bg-white/5" />
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_320px] lg:items-end">
           <div className="relative">
-            <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.32em] text-sky-300">
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.32em] text-sky-300">
               Updated Rate Card
             </p>
-            <h1 className="max-w-4xl text-4xl font-extrabold leading-tight md:text-6xl">
+            <h1 className="max-w-4xl text-4xl font-bold tracking-tight leading-tight md:text-6xl">
               Home Care & Domestic Services
             </h1>
-            <p className="mt-5 max-w-2xl text-base font-semibold leading-8 text-blue-100">
+            <p className="mt-5 max-w-2xl text-base font-medium leading-relaxed text-blue-100">
               Transparent pricing for domestic help, home care, drivers, security,
               housekeeping, and support staff.
             </p>
           </div>
 
           <div className="relative rounded-lg border border-white/15 bg-white/10 p-5 shadow-2xl backdrop-blur">
-            <p className="text-xs font-extrabold uppercase tracking-wide text-sky-200">Quick Contact</p>
-            <a href="tel:+919076354999" className="mt-3 flex items-center gap-3 text-2xl font-extrabold">
+            <p className="text-xs font-bold uppercase tracking-wide text-sky-200">Quick Contact</p>
+            <a href="tel:02247173377" className="mt-3 flex items-center gap-3 text-2xl font-bold">
+              <Phone className="size-5 text-sky-300" />
+              022 47173377
+            </a>
+            <a href="tel:+919076354999" className="mt-3 flex items-center gap-3 text-2xl font-bold">
               <Phone className="size-5 text-sky-300" />
               9076354999
             </a>
-            <a href="mailto:info@bbhospitality.in" className="mt-3 flex items-center gap-3 text-sm font-bold text-blue-100">
+            <a href="mailto:info@bbhospitality.in" className="mt-3 flex items-center gap-3 text-sm font-semibold text-blue-100">
               <Mail className="size-4 text-sky-300" />
               info@bbhospitality.in
             </a>
@@ -208,8 +212,8 @@ export default function RateCardPage() {
             ["Pricing Type", "Monthly / Visit"],
           ].map(([label, value]) => (
             <div key={label} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
-              <p className="text-xs font-extrabold uppercase tracking-wide text-slate-500">{label}</p>
-              <p className="mt-2 text-3xl font-extrabold text-blue-950">{value}</p>
+              <p className="text-xs font-bold uppercase tracking-wide text-gray-500">{label}</p>
+              <p className="mt-2 text-3xl font-bold text-gray-900">{value}</p>
             </div>
           ))}
         </div>
@@ -219,7 +223,7 @@ export default function RateCardPage() {
             <a
               key={section.id}
               href={`#${section.id}`}
-              className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-extrabold text-slate-700 shadow-sm transition hover:border-blue-300 hover:text-blue-700"
+              className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm transition hover:border-blue-300 hover:text-blue-700"
             >
               {section.title}
             </a>
@@ -238,15 +242,15 @@ export default function RateCardPage() {
                       <Icon className="size-6" />
                     </div>
                     <div>
-                      <h2 className="text-2xl font-extrabold leading-tight text-blue-950 md:text-3xl">
+                      <h2 className="text-2xl font-bold tracking-tight leading-tight text-gray-900 md:text-3xl">
                         {section.title}
                       </h2>
-                      <p className="mt-2 max-w-2xl text-sm font-semibold leading-6 text-slate-600">
+                      <p className="mt-2 max-w-2xl text-sm font-medium leading-relaxed text-gray-600">
                         {section.description}
                       </p>
                     </div>
                   </div>
-                  <p className="text-sm font-extrabold text-slate-500">{section.rows.length} rates</p>
+                  <p className="text-sm font-semibold text-gray-500">{section.rows.length} rates</p>
                 </div>
 
                 <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
@@ -257,12 +261,12 @@ export default function RateCardPage() {
                     >
                       <div className="flex min-h-28 flex-col justify-between gap-5">
                         <div>
-                          <h3 className="text-base font-extrabold leading-6 text-blue-950">{row.service}</h3>
-                          <p className="mt-2 text-sm font-semibold leading-5 text-slate-500">{row.details ?? "Standard service"}</p>
+                          <h3 className="text-base font-semibold tracking-tight leading-6 text-gray-900">{row.service}</h3>
+                          <p className="mt-2 text-sm font-normal leading-relaxed text-gray-600">{row.details ?? "Standard service"}</p>
                         </div>
                         <div className="flex items-end justify-between gap-3 border-t border-slate-100 pt-4">
-                          <span className="text-xs font-extrabold uppercase tracking-wide text-slate-400">Charge</span>
-                          <span className="text-right text-xl font-extrabold text-orange-600">{row.charge}</span>
+                          <span className="text-xs font-bold uppercase tracking-wide text-gray-500">Charge</span>
+                          <span className="text-right text-xl font-bold text-orange-600">{row.charge}</span>
                         </div>
                       </div>
                     </div>
@@ -270,7 +274,7 @@ export default function RateCardPage() {
                 </div>
 
                 {section.note ? (
-                  <div className="mt-4 rounded-lg border border-amber-200 bg-amber-50 px-5 py-4 text-sm font-bold leading-6 text-amber-900">
+                  <div className="mt-4 rounded-lg border border-amber-200 bg-amber-50 px-5 py-4 text-sm font-medium leading-relaxed text-amber-900">
                     Note: {section.note}
                   </div>
                 ) : null}
@@ -281,23 +285,30 @@ export default function RateCardPage() {
 
         <div className="mt-12 rounded-lg bg-blue-950 p-6 text-white shadow-[0_20px_50px_rgba(15,23,42,0.18)] md:flex md:items-center md:justify-between md:gap-6">
           <div>
-            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-sky-300">BB HOSPITALITY</p>
-            <h2 className="mt-3 text-2xl font-extrabold">Need staff for your home or office?</h2>
-            <p className="mt-2 text-sm font-semibold leading-6 text-blue-100">
+            <p className="text-xs font-bold uppercase tracking-[0.28em] text-sky-300">BB HOSPITALITY</p>
+            <h2 className="mt-3 text-2xl font-bold tracking-tight">Need staff for your home or office?</h2>
+            <p className="mt-2 text-sm font-medium leading-relaxed text-blue-100">
               Share your requirement and the team will help you choose the right service.
             </p>
           </div>
           <div className="mt-5 flex flex-wrap gap-3 md:mt-0">
             <a
-              href="tel:+919076354999"
-              className="inline-flex h-11 items-center gap-2 rounded bg-white px-5 text-sm font-extrabold text-blue-950 transition hover:bg-sky-100"
+              href="tel:02247173377"
+              className="inline-flex h-11 items-center gap-2 rounded bg-white px-5 text-sm font-bold text-gray-900 transition hover:bg-sky-100"
             >
               <Phone className="size-4" />
-              Call Now
+              Call Landline
+            </a>
+            <a
+              href="tel:+919076354999"
+              className="inline-flex h-11 items-center gap-2 rounded bg-white px-5 text-sm font-bold text-gray-900 transition hover:bg-sky-100"
+            >
+              <Phone className="size-4" />
+              Call Mobile
             </a>
             <a
               href="/contact"
-              className="inline-flex h-11 items-center gap-2 rounded bg-orange-500 px-5 text-sm font-extrabold text-white transition hover:bg-orange-600"
+              className="inline-flex h-11 items-center gap-2 rounded bg-orange-500 px-5 text-sm font-bold text-white transition hover:bg-orange-600"
             >
               Contact Us
             </a>

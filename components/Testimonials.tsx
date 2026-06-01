@@ -23,21 +23,21 @@ export default function Testimonials() {
       id: 1,
       name: "JESSICA CLARK",
       role: "Customer",
-      image: "/images/👨‍👩‍👧‍👦 Happy Family (Main Hero Image).jpeg",
+      image: "https://randomuser.me/api/portraits/women/1.jpg",
       text: "Amazing and highly efficient, met all my expectations and more, they were there on time and left my duplex in pristine conditions. Thank BB HOSPITALITY."
     },
     {
       id: 2,
       name: "CARLOS MOYA",
       role: "Customer",
-      image: "/images/Maid Service.jpeg",
+      image: "https://randomuser.me/api/portraits/men/1.jpg",
       text: "Amazing and highly efficient, met all my expectations and more, they were there on time and left my duplex in pristine conditions. Thank BB HOSPITALITY."
     },
     {
       id: 3,
       name: "SARAH JENKINS",
       role: "Customer",
-      image: "/images/🧹 Housekeeping Staff.jpeg", 
+      image: "https://randomuser.me/api/portraits/women/2.jpg", 
       text: "The team was incredibly professional and thorough. My office has never looked better. Highly recommend their commercial cleaning services!"
     }
   ];
@@ -68,10 +68,10 @@ export default function Testimonials() {
             className="text-center mb-12 flex flex-col items-center"
           >
             <div className="flex items-center gap-2 mb-3">
-              <span className="text-xs font-bold tracking-widest text-gray-800 uppercase">TESTIMONIALS</span>
+              <span className="text-xs font-semibold tracking-widest text-gray-600 uppercase">TESTIMONIALS</span>
               <span className="text-blue-600 text-lg font-light leading-none -mt-1">{"//"}</span>
             </div>
-            <h2 className="text-4xl md:text-[2.75rem] font-medium text-[#111827] leading-tight">
+            <h2 className="text-4xl md:text-[2.75rem] font-bold text-gray-900 leading-tight tracking-tight">
               Empowering Thousands of <br className="hidden md:block" /> Users and Enterprises
             </h2>
           </motion.div>
@@ -108,8 +108,8 @@ export default function Testimonials() {
                   transition={{ delay: index * 0.1 }}
                   className="min-w-full lg:min-w-[calc(50%-12px)] snap-center bg-white rounded-[2rem] p-8 md:p-10 shadow-sm flex flex-col"
                 >
-                  <div className="font-serif text-5xl font-black text-[#111827] leading-none mb-4">“</div>
-                  <p className="text-gray-700 text-[15px] md:text-base leading-relaxed mb-8 flex-grow">
+                  <div className="font-serif text-5xl font-bold text-gray-900 leading-none mb-4">“</div>
+                  <p className="text-gray-600 text-[15px] md:text-base leading-relaxed mb-8 flex-grow">
                     {testimonial.text}
                   </p>
                   
@@ -119,7 +119,7 @@ export default function Testimonials() {
                         src={testimonial.image} 
                         alt={testimonial.name} 
                         fill 
-                        className="object-contain"
+                        className="object-cover"
                       />
                     </div>
                     <div className="flex flex-col">

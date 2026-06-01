@@ -20,10 +20,10 @@ const mobileNavLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-950 text-white">
+    <footer className="bg-white border-t border-gray-200 text-gray-900">
       <div className="mx-auto grid max-w-5xl gap-10 px-4 py-12 md:grid-cols-[1.2fr_1fr_1fr_1.5fr]">
         <div>
-          <div className="mb-4 inline-flex rounded-lg bg-white px-4 py-3 shadow-lg">
+          <div className="mb-4 inline-flex rounded-lg bg-white px-4 py-3 shadow-md border border-gray-100">
             <Image
               src="/logo_website-.png"
               alt="BB HOSPITALITY"
@@ -32,22 +32,22 @@ export default function Footer() {
               className="h-10 w-auto max-w-56 object-contain"
             />
           </div>
-          <p className="text-sm leading-6 text-blue-100">
+          <p className="text-sm leading-relaxed text-gray-600">
             Premium maid, care, housekeeping, and hospitality staffing support for modern families and businesses.
           </p>
-          <div className="mt-5 text-xs leading-6 text-blue-100">
-            <p className="font-bold text-white">Open Hours:</p>
-            <p>Mon - Sat: 9:30am - 6:30pm</p>
+          <div className="mt-5 text-xs leading-relaxed text-gray-600">
+            <p className="font-bold text-gray-900">Working Hours:</p>
+            <p>Mon - Sat: 10:00 AM - 6:00 PM</p>
             <p>Sunday: Closed</p>
           </div>
         </div>
 
         <div>
-          <h3 className="mb-4 text-lg font-extrabold">Quick Links</h3>
-          <div className="h-0.5 w-8 bg-yellow-400" />
-          <div className="mt-5 grid gap-3 text-sm font-semibold text-blue-100">
+          <h3 className="mb-4 text-lg font-bold tracking-tight text-gray-900">Quick Links</h3>
+          <div className="h-0.5 w-8 bg-orange-500" />
+          <div className="mt-5 grid gap-3 text-sm font-semibold text-gray-600">
             {quickLinks.map((link) => (
-              <Link key={link} href={quickLinkHrefs[link] ?? "#"} className="hover:text-white">
+              <Link key={link} href={quickLinkHrefs[link] ?? "#"} className="hover:text-gray-900">
                 {link}
               </Link>
             ))}
@@ -55,11 +55,11 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="mb-4 text-lg font-extrabold">Quick Links</h3>
-          <div className="h-0.5 w-8 bg-yellow-400" />
-          <div className="mt-5 grid gap-3 text-sm font-semibold text-blue-100">
+          <h3 className="mb-4 text-lg font-bold tracking-tight text-gray-900">Quick Links</h3>
+          <div className="h-0.5 w-8 bg-orange-500" />
+          <div className="mt-5 grid gap-3 text-sm font-semibold text-gray-600">
             {policyLinks.map((link) => (
-              <Link key={link} href="#" className="hover:text-white">
+              <Link key={link} href="#" className="hover:text-gray-900">
                 {link}
               </Link>
             ))}
@@ -67,29 +67,33 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="mb-4 text-lg font-extrabold">Official Address</h3>
-          <div className="h-0.5 w-8 bg-yellow-400" />
-          <div className="mt-5 grid gap-3 text-sm font-semibold text-blue-100">
-            <p className="flex gap-2 leading-6">
-              <MapPin className="mt-1 size-4 shrink-0 text-sky-300" />
+          <h3 className="mb-4 text-lg font-bold tracking-tight text-gray-900">Official Address</h3>
+          <div className="h-0.5 w-8 bg-orange-500" />
+          <div className="mt-5 grid gap-3 text-sm font-semibold text-gray-600">
+            <p className="flex gap-2 leading-relaxed">
+              <MapPin className="mt-1 size-4 shrink-0 text-gray-400" />
               Office No. 1007, 10th Floor, The Landmark, Sector 7, Kharghar, Navi Mumbai, Pin Code - 410210.
             </p>
-            <a href="tel:+919076354999" className="flex items-center gap-2 hover:text-white">
-              <Phone className="size-4 text-sky-300" />
+            <a href="tel:02247173377" className="flex items-center gap-2 hover:text-gray-900">
+              <Phone className="size-4 text-gray-400" />
+              022 47173377 (Landline)
+            </a>
+            <a href="tel:+919076354999" className="flex items-center gap-2 hover:text-gray-900">
+              <Phone className="size-4 text-gray-400" />
               (+91) 9076354999
             </a>
-            <a href="mailto:info@bbhospitality.in" className="flex items-center gap-2 hover:text-white">
-              <Mail className="size-4 text-sky-300" />
+            <a href="mailto:info@bbhospitality.in" className="flex items-center gap-2 hover:text-gray-900">
+              <Mail className="size-4 text-gray-400" />
               info@bbhospitality.in
             </a>
-            <a href="mailto:operations@bbhospitality.in" className="flex items-center gap-2 hover:text-white">
-              <Mail className="size-4 text-sky-300" />
+            <a href="mailto:operations@bbhospitality.in" className="flex items-center gap-2 hover:text-gray-900">
+              <Mail className="size-4 text-gray-400" />
               operations@bbhospitality.in
             </a>
           </div>
           <div className="mt-5 flex gap-3">
             {["f", "x", "in"].map((label) => (
-              <a key={label} href="#" className="flex size-8 items-center justify-center rounded-full bg-white/10 text-xs font-extrabold text-white transition hover:bg-orange-500">
+              <a key={label} href="#" className="flex size-8 items-center justify-center rounded-full bg-gray-100 text-xs font-bold text-gray-600 transition hover:bg-orange-500 hover:text-white">
                 {label}
               </a>
             ))}
@@ -97,13 +101,13 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10 bg-blue-900 px-4 py-4 text-center text-xs font-semibold text-blue-100">
+      <div className="border-t border-gray-100 bg-gray-50 px-4 py-4 text-center text-xs font-semibold text-gray-500">
         2026 All rights reserved by BB HOSPITALITY.
       </div>
 
-      <nav className="fixed inset-x-0 bottom-0 z-30 grid h-16 grid-cols-3 border-t border-slate-200 bg-white text-[11px] font-extrabold text-[#12345b] shadow-[0_-8px_30px_rgba(15,23,42,0.12)] md:hidden">
+      <nav className="fixed inset-x-0 bottom-0 z-30 grid h-16 grid-cols-3 border-t border-gray-200 bg-white text-[11px] font-bold text-gray-700 shadow-[0_-8px_30px_rgba(0,0,0,0.05)] md:hidden">
         {mobileNavLinks.map(({ label, href, Icon }) => (
-          <Link key={label} href={href} className="flex min-w-0 flex-col items-center justify-center gap-1 px-2 text-center leading-tight hover:bg-orange-50">
+          <Link key={label} href={href} className="flex min-w-0 flex-col items-center justify-center gap-1 px-2 text-center leading-tight hover:bg-gray-50">
             <Icon className="size-4 shrink-0 text-orange-500" />
             <span className="w-full truncate">{label}</span>
           </Link>

@@ -84,7 +84,7 @@ export default function AboutPage() {
     <main className="min-h-screen w-full bg-white">
       
       {/* ===== HERO SECTION ===== */}
-      <section className="relative w-full bg-gradient-to-br from-blue-50 to-sky-100 pt-20 pb-20 px-4">
+      <section className="relative w-full bg-gradient-to-br from-blue-50 to-sky-100 pt-32 pb-20 px-4 lg:pt-40">
         <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -92,10 +92,10 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-5xl md:text-6xl font-medium text-[#111827] mb-6 leading-[1.15] tracking-tight">
+            <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-gray-900 mb-6 leading-[1.2] py-2">
               About <span className="text-blue-600">BB HOSPITALITY</span>
             </h1>
-            <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
               Connecting homes and businesses with verified maids, cooks, caregivers, housekeeping teams, and hospitality staff.
             </p>
             <div className="h-1 w-24 bg-[#fbbf24] rounded-full mx-auto"></div>
@@ -134,13 +134,13 @@ export default function AboutPage() {
                     OUR STORY
                   </span>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-medium text-[#111827] mb-6 leading-[1.15]">
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-6 leading-[1.15]">
                   From a Simple Idea to Industry Leader
                 </h2>
-                <p className="text-gray-500 text-lg leading-relaxed mb-4">
+                <p className="text-gray-600 text-lg leading-relaxed mb-4">
                 What started as a small team of passionate cleaners has evolved into a trusted platform serving over 50,000 customers. We believed that professional cleaning should be accessible, reliable, and truly exceptional.
               </p>
-                <p className="text-gray-500 text-lg leading-relaxed mb-8">
+                <p className="text-gray-600 text-lg leading-relaxed mb-8">
                 Today, we continue our mission by connecting customers with vetted, professional cleaners who care about their work and your home as much as we do.
               </p>
               <div className="space-y-3">
@@ -175,7 +175,7 @@ export default function AboutPage() {
             <span className="inline-block px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-semibold mb-6">
               OUR VALUES
             </span>
-            <h2 className="text-4xl md:text-5xl font-medium text-[#111827]">What We Stand For</h2>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900">What We Stand For</h2>
           </motion.div>
 
           <motion.div
@@ -200,7 +200,7 @@ export default function AboutPage() {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                      <h3 className="text-xl font-semibold tracking-tight text-gray-900 mb-2">
                         {value.title}
                       </h3>
                       <p className="text-gray-600 leading-relaxed">
@@ -227,7 +227,7 @@ export default function AboutPage() {
           >
             {stats.map((stat, idx) => (
               <motion.div key={idx} variants={itemVariants} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+                <div className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-2">
                   {stat.number}
                 </div>
                 <div className="text-blue-100 text-sm md:text-base">
@@ -252,7 +252,7 @@ export default function AboutPage() {
             <span className="inline-block px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-semibold mb-6">
               MILESTONE
             </span>
-            <h2 className="text-4xl md:text-5xl font-medium text-[#111827]">Our Journey</h2>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900">Our Journey</h2>
           </motion.div>
 
           <motion.div
@@ -271,13 +271,13 @@ export default function AboutPage() {
                   )}
                 </div>
                 <div className="pb-8">
-                  <h3 className="text-2xl font-bold text-blue-600 mb-2">
+                  <h3 className="text-2xl font-bold tracking-tight text-blue-600 mb-2">
                     {item.year}
                   </h3>
-                  <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h4 className="text-xl font-semibold tracking-tight text-gray-900 mb-2">
                     {item.title}
                   </h4>
-                  <p className="text-gray-600 max-w-lg">
+                  <p className="text-gray-600 max-w-lg leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -300,8 +300,8 @@ export default function AboutPage() {
             <span className="inline-block px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-semibold mb-6">
               MEET OUR TEAM
             </span>
-            <h2 className="text-4xl md:text-5xl font-medium text-[#111827] mb-4">Meet the People Behind BB HOSPITALITY</h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-4">Meet the People Behind BB HOSPITALITY</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Our team of 500+ professional cleaners are trained, certified, and dedicated to making your home sparkle.
             </p>
           </motion.div>
@@ -333,10 +333,10 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-medium text-[#111827] mb-6 leading-[1.15]">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-6 leading-[1.15]">
               Ready to Experience the BB HOSPITALITY Difference?
             </h2>
-            <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
               Join thousands of happy customers who trust us with their homes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

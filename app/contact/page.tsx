@@ -12,17 +12,17 @@ const contactCards = [
   },
   {
     title: "Call us",
-    value: "+91 9076354999",
+    value: "022 47173377 (Landline)\n+91 9076354999",
     icon: Phone,
   },
   {
     title: "Our Location",
-    value: "Office No. 1007, 10th Floor,\nThe Landmark,\nSector 7,\nKharghar, Navi Mumbai,\nPin Code - 410210\nContact No: 9076354999\nEmail ID: info@bbhospitality.in",
+    value: "Office No. 1007, 10th Floor,\nThe Landmark,\nSector 7,\nKharghar, Navi Mumbai,\nPin Code - 410210\nLandline: 02247173377\nContact No: 9076354999\nEmail ID: info@bbhospitality.in",
     icon: MapPin,
   },
   {
     title: "Working Hours",
-    value: "Mon – Fri: 9.00am – 8.00pm\nSaturday: 10.00am – 8.00pm\nSunday: 10.00am – 4.00pm",
+    value: "Monday to Saturday:\n10:00 AM – 6:00 PM\nSunday: Closed\n\nAvailable: Monday to Saturday,\n10:00 AM – 6:00 PM",
     icon: Clock,
   },
 ];
@@ -40,8 +40,8 @@ export default function ContactPage() {
 
         <div className="container mx-auto max-w-7xl relative">
           <div className="text-center mb-16">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-600 mb-4">CONTACT US</p>
-            <h1 className="text-4xl md:text-5xl font-medium text-[#111827] leading-[1.1] mb-4">Contact Us Today</h1>
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gray-600 mb-4">CONTACT US</p>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-4">Contact Us Today</h1>
             <div className="flex items-center justify-center gap-3">
               <div className="h-1.5 w-16 rounded-full bg-blue-600" />
               <div className="h-1.5 w-16 rounded-full bg-sky-300" />
@@ -56,8 +56,8 @@ export default function ContactPage() {
                   <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-sm mb-5">
                     <Icon className="w-6 h-6 text-blue-600" />
                   </div>
-                  <h3 className="text-lg font-semibold text-[#111827] mb-2">{card.title}</h3>
-                  <p className="whitespace-pre-line text-sm text-gray-600 leading-6">{card.value}</p>
+                  <h3 className="text-lg font-semibold tracking-tight text-gray-900 mb-2">{card.title}</h3>
+                  <p className="whitespace-pre-line text-sm text-gray-600 leading-relaxed">{card.value}</p>
                 </div>
               );
             })}
@@ -70,8 +70,8 @@ export default function ContactPage() {
               </div>
                 <div className="bg-gradient-to-br from-white via-blue-50 to-sky-100 rounded-[3rem] p-6 md:p-8 shadow-[0_35px_60px_-30px_rgba(37,99,235,0.25)]">
                 <div className="mb-8">
-                  <p className="text-xs uppercase tracking-[0.35em] text-blue-600 mb-3">Contact form</p>
-                  <h2 className="text-3xl md:text-4xl font-medium text-[#111827] leading-tight">Contact us Today for Any Questions</h2>
+                  <p className="text-xs uppercase tracking-[0.35em] text-gray-600 mb-3">Contact form</p>
+                  <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 leading-tight">Contact us Today for Any Questions</h2>
                 </div>
                 <DetailedQuoteForm embedded />
               </div>
@@ -81,8 +81,8 @@ export default function ContactPage() {
               <div className="relative rounded-[3rem] overflow-hidden bg-slate-50 shadow-[0_35px_60px_-30px_rgba(17,24,39,0.25)]">
                 <Image src="/images/👨‍👩‍👧‍👦 Happy Family (Main Hero Image).jpeg" alt="Happy family supported by BB HOSPITALITY" width={1200} height={1200} className="aspect-square w-full object-contain" />
                 <div className="absolute bottom-6 left-6 rounded-[2rem] bg-white/90 backdrop-blur-xl p-5 shadow-lg border border-white">
-                  <p className="text-sm text-gray-500">Need advice on our services?</p>
-                  <p className="text-lg font-semibold text-gray-900">We’re ready to help.</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">Need advice on our services?</p>
+                  <p className="text-lg font-semibold tracking-tight text-gray-900">We’re ready to help.</p>
                 </div>
                 <div className="absolute top-6 right-6 opacity-80 hidden lg:block">
                   <Image src="/footer-leafs-1.webp" alt="leaf" width={90} height={90} className="object-contain" />

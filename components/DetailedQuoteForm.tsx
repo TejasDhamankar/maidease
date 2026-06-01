@@ -60,7 +60,7 @@ export default function DetailedQuoteForm({ embedded }: DetailedQuoteFormProps) 
       viewport={{ once: true }}
       className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-gray-100"
     >
-      <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+      <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-8 text-center">
         Request a Professional Service
       </h2>
 
@@ -68,18 +68,18 @@ export default function DetailedQuoteForm({ embedded }: DetailedQuoteFormProps) 
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="bg-blue-50 border border-blue-200 text-blue-800 rounded-xl p-6 text-center space-y-4"
+          className="bg-gray-50 border border-gray-200 text-gray-900 rounded-xl p-6 text-center space-y-4"
         >
-          <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
-            <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+            <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
             </svg>
           </div>
-          <h3 className="text-lg font-bold">Request Submitted!</h3>
-          <p className="text-sm">Thank you for your request. We will get back to you shortly.</p>
+          <h3 className="text-lg font-bold tracking-tight text-gray-900">Request Submitted!</h3>
+          <p className="text-sm leading-relaxed text-gray-600">Thank you for your request. We will get back to you shortly.</p>
           <button 
             onClick={() => { setSuccess(false); setName(""); setPhone(""); setLocation(""); setService(""); setUrgency(""); }}
-            className="text-[#007bff] hover:underline text-sm font-medium"
+            className="text-blue-600 hover:text-blue-700 text-sm font-medium transition-colors"
           >
             Submit another request
           </button>
@@ -171,7 +171,7 @@ export default function DetailedQuoteForm({ embedded }: DetailedQuoteFormProps) 
           <button 
             type="submit" 
             disabled={loading}
-            className={`w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg flex items-center justify-center mt-4 ${
+            className={`w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 rounded-xl transition-all shadow-lg flex items-center justify-center mt-4 ${
               loading ? "opacity-75 cursor-not-allowed" : ""
             }`}
           >
