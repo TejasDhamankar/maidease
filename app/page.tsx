@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowUp,
@@ -414,7 +414,7 @@ function BookingCard() {
                 <h2 className="text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
                   Contact Details
                 </h2>
-                <p className="mt-2 text-slate-500">We'll get back to you with the best matches.</p>
+                <p className="mt-2 text-slate-500">We&apos;ll get back to you with the best matches.</p>
               </div>
 
               <div className="grid gap-4">
@@ -541,7 +541,7 @@ export default function HomePage() {
             <div className="relative mx-auto aspect-square w-full max-w-[400px] overflow-hidden rounded-xl bg-white/10 shadow-[0_18px_45px_rgba(15,23,42,0.12)]">
               <Image src="/images/👨‍👩‍👧‍👦 Happy Family (Main Hero Image).jpeg" alt="BB HOSPITALITY verified staff" fill className="object-contain object-center" priority />
             </div>
-            <p className="mt-5 text-xl font-semibold text-gray-900">
+            <p className="mt-5 text-xl font-semibold text-white">
               Trained By Experts, Candidates
             </p>
           </div>
@@ -612,8 +612,8 @@ export default function HomePage() {
         <div className="relative mx-auto grid max-w-5xl items-center overflow-hidden rounded-lg bg-gradient-to-r from-blue-950 via-[#12345b] to-orange-500 p-8 text-white shadow-xl md:min-h-[300px] md:grid-cols-[1fr_360px] md:p-12">
           <div className="relative z-10">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-orange-200">Verified Staffing</p>
-            <h2 className="mb-4 text-3xl font-bold tracking-tight">Professional support for every home and workplace</h2>
-            <p className="max-w-xl text-sm font-normal leading-relaxed text-blue-50">
+            <h2 className="mb-4 text-3xl font-bold tracking-tight text-orange-200 ">Professional support for every home and workplace</h2>
+            <p className="max-w-xl text-sm font-normal leading-relaxed text-orange-200">
               Tell us your requirement and we will help you choose reliable staff for the right timing, location, and budget.
             </p>
             <Button asChild className="mt-6 h-11 rounded bg-white px-6 font-semibold text-gray-900 hover:bg-orange-50">
@@ -653,11 +653,11 @@ export default function HomePage() {
         <h2 className="mb-8 text-center text-3xl font-bold tracking-tight text-gray-900">Why Use BB HOSPITALITY?</h2>
         <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-2">
           {benefits.map((item) => (
-            <article key={item.title} className="grid grid-cols-[130px_1fr] items-center overflow-hidden rounded-xl border border-slate-100 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.12)] transition hover:-translate-y-1">
-              <div className="relative aspect-square h-full min-h-32 overflow-hidden rounded-r-[60px] bg-slate-50">
+            <article key={item.title} className="flex flex-col items-center overflow-hidden rounded-xl border border-slate-100 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.12)] transition hover:-translate-y-1 sm:grid sm:grid-cols-[130px_1fr]">
+              <div className="relative aspect-square w-full overflow-hidden rounded-b-[40px] bg-slate-50 sm:h-full sm:min-h-32 sm:rounded-b-none sm:rounded-r-[60px]">
                 <Image src={item.image} alt={item.title} fill className="object-contain" />
               </div>
-              <div className="p-5">
+              <div className="p-5 text-center sm:text-left">
                 <h3 className="mb-2 text-lg font-semibold text-gray-900">{item.title}</h3>
                 <p className="text-sm leading-relaxed text-gray-700">{item.text}</p>
               </div>
